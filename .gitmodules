@@ -1,4 +1,4 @@
 [submodule "OpenXLSX"]
 	path = OpenXLSX
-	url = https://github.com/troldal/OpenXLSX.git
+	url = git@github.com:zhiyangyou/OpenXLSX.git
 	branch = master
