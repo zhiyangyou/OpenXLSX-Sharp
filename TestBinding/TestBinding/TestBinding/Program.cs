@@ -18,7 +18,8 @@ class Program
         // in effect, means that XLFormula is not very useful for reading formulas from existing spread-
         // sheets, but should rather be used to add or overwrite formulas to spreadsheets.
 
-        wks.Cell("A1").Value
+        var v= wks.Cell("A1").Value;
+        2024年1月24日00:07:09  处理Value 和 Formula 的 Get 和 Set的代理
         // wks.cell("B1").value() = 1;
         // wks.cell("C1").value() = 2;
         // wks.cell("D1").value() = 3;
