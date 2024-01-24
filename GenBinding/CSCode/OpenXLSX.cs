@@ -2928,6 +2928,9 @@ namespace OpenXLSX
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??BXLCellValueProxy@OpenXLSX@@QEAA?AVXLCellValue@1@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void OperatorConversion(__IntPtr __instance, __IntPtr @return);
 
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setString@XLCellValueProxy@OpenXLSX@@QEAAXPEBD@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern void SetString(__IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string stringValue);
+
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?clear@XLCellValueProxy@OpenXLSX@@QEAAAEAV12@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr Clear(__IntPtr __instance);
 
@@ -2936,6 +2939,28 @@ namespace OpenXLSX
 
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?typeAsString@XLCellValueProxy@OpenXLSX@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void TypeAsString(__IntPtr __instance, __IntPtr @return);
+
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?getInteger@XLCellValueProxy@OpenXLSX@@QEAA_JXZ", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern long GetInteger(__IntPtr __instance);
+
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setInteger@XLCellValueProxy@OpenXLSX@@QEAAX_J@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern void SetInteger(__IntPtr __instance, long numberValue);
+
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?getBoolean@XLCellValueProxy@OpenXLSX@@QEAA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
+                [return: MarshalAs(UnmanagedType.I1)]
+                internal static extern bool GetBoolean(__IntPtr __instance);
+
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setBoolean@XLCellValueProxy@OpenXLSX@@QEAAX_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern void SetBoolean(__IntPtr __instance, bool numberValue);
+
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?getFloat@XLCellValueProxy@OpenXLSX@@QEAANXZ", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern double GetFloat(__IntPtr __instance);
+
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setFloat@XLCellValueProxy@OpenXLSX@@QEAAXN@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern void SetFloat(__IntPtr __instance, double numberValue);
+
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?getString@XLCellValueProxy@OpenXLSX@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern void GetString(__IntPtr __instance, __IntPtr @return);
             }
 
             public __IntPtr __Instance { get; protected set; }
@@ -3048,6 +3073,13 @@ namespace OpenXLSX
                 return _____ret;
             }
 
+            /// <summary>Set the cell to a string value.</summary>
+            /// <param name="stringValue">The value to be set.</param>
+            public void SetString(string stringValue)
+            {
+                __Internal.SetString(__Instance, stringValue);
+            }
+
             /// <summary>Clear the contents of the cell.</summary>
             /// <returns>A reference to the current object.</returns>
             public global::OpenXLSX.OpenXLSX.XLCellValueProxy Clear
@@ -3079,6 +3111,61 @@ namespace OpenXLSX
                 {
                     var ___ret = new global::Std.BasicString.__Internalc__N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C();
                     __Internal.TypeAsString(__Instance, new IntPtr(&___ret));
+                    var __basicStringRet0 = global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>.__CreateInstance(new __IntPtr(&___ret));
+                    var __retString0 = global::Std.BasicStringExtensions.Data(__basicStringRet0);
+                    __basicStringRet0.Dispose();
+                    return __retString0;
+                }
+            }
+
+            public long Integer
+            {
+                get
+                {
+                    var ___ret = __Internal.GetInteger(__Instance);
+                    return ___ret;
+                }
+
+                set
+                {
+                    __Internal.SetInteger(__Instance, value);
+                }
+            }
+
+            public bool Boolean
+            {
+                get
+                {
+                    var ___ret = __Internal.GetBoolean(__Instance);
+                    return ___ret;
+                }
+
+                set
+                {
+                    __Internal.SetBoolean(__Instance, value);
+                }
+            }
+
+            public double Float
+            {
+                get
+                {
+                    var ___ret = __Internal.GetFloat(__Instance);
+                    return ___ret;
+                }
+
+                set
+                {
+                    __Internal.SetFloat(__Instance, value);
+                }
+            }
+
+            public string String
+            {
+                get
+                {
+                    var ___ret = new global::Std.BasicString.__Internalc__N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C();
+                    __Internal.GetString(__Instance, new IntPtr(&___ret));
                     var __basicStringRet0 = global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>.__CreateInstance(new __IntPtr(&___ret));
                     var __retString0 = global::Std.BasicStringExtensions.Data(__basicStringRet0);
                     __basicStringRet0.Dispose();
