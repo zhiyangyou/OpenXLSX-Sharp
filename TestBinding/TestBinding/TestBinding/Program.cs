@@ -37,45 +37,48 @@ public class SheetData
 
     public SheetData(ulong rowInfoCount, IntPtr rowInfos, ulong cellCount, IntPtr cellsData)
     {
-        Console.WriteLine($"rowInfoCount {rowInfoCount} cellCount{cellCount}");
+        //Console.WriteLine($"rowInfoCount {rowInfoCount} cellCount{cellCount}");
         var sw = new Stopwatch();
         sw.Start();
         _arrRowPosInfos = new RowPosInfo[(int)rowInfoCount];
-        Console.WriteLine($" new RowPosInfo[] cost {sw.ElapsedTicks}   ticks");
-        sw.Restart();
+        //Console.WriteLine($" new RowPosInfo[] cost {sw.ElapsedTicks}   ticks");
+        //sw.Restart();
         _arrCellsData = new OpenXLSXCellData[(int)cellCount];
-        Console.WriteLine($" new OpenXLSXCellData[] cost {sw.ElapsedTicks}   ticks");
+        //Console.WriteLine($" new OpenXLSXCellData[] cost {sw.ElapsedTicks}   ticks");
 
 
         _dicAllStrs.EnsureCapacity((int)rowInfoCount);
 
-        sw.Restart();
+        //sw.Restart();
         unsafe
         {
-            Console.WriteLine($" unsafe scope cost {sw.ElapsedTicks}   ticks");
-            sw.Restart();
+            //Console.WriteLine($" unsafe scope cost {sw.ElapsedTicks}   ticks");
+            //sw.Restart();
             fixed (OpenXLSXCellData* pCell = _arrCellsData)
             {
-                Console.WriteLine($" fixed (OpenXLSXCellData* pCell cost {sw.ElapsedTicks}   ticks");
-                sw.Restart();
+                //Console.WriteLine($" fixed (OpenXLSXCellData* pCell cost {sw.ElapsedTicks}   ticks");
+                //sw.Restart();
                 fixed (RowPosInfo* pRowsInfo = _arrRowPosInfos)
                 {
-                    Console.WriteLine($"fixed (RowPosInfo* pRowsInfo cost {sw.ElapsedTicks}   ticks");
-                    sw.Restart();
+                    //Console.WriteLine($"fixed (RowPosInfo* pRowsInfo cost {sw.ElapsedTicks}   ticks");
+                    //sw.Restart();
                     Unsafe.CopyBlock(pCell, cellsData.ToPointer(), (uint)cellCount * (uint)sizeof(OpenXLSXCellData));
-                    Console.WriteLine($"copy cell data cost {sw.ElapsedTicks}   ticks");
-                    sw.Restart();
+                    //Console.WriteLine($"copy cell data cost {sw.ElapsedTicks}   ticks");
+                    //sw.Restart();
                     Unsafe.CopyBlock(pRowsInfo, rowInfos.ToPointer(), (uint)rowInfoCount * (uint)sizeof(RowPosInfo));
-                    Console.WriteLine($"copy rowInfo  cost {sw.ElapsedTicks}   ticks");
+                    //Console.WriteLine($"copy rowInfo  cost {sw.ElapsedTicks}   ticks");
                 }
             }
 
-            sw.Restart();
+            //sw.Restart();
             foreach (var cellData in _arrCellsData)
             {
                 if (cellData.ValueType == 5) // XLValueType::String
                 {
-                    _dicAllStrs.Add((IntPtr)cellData.PU8Str, Marshal.PtrToStringUTF8(new IntPtr(cellData.PU8Str)) ?? "");
+                    //_dicAllStrs.Add((IntPtr)cellData.PU8Str, Marshal.PtrToStringUTF8(new IntPtr(cellData.PU8Str)) ?? "");
+                    var str = Marshal.PtrToStringUni(new IntPtr(cellData.PU8Str)) ?? "";
+                    Console.WriteLine(str);
+                    _dicAllStrs.Add((IntPtr)cellData.PU8Str, str);
                 }
             }
 
@@ -125,8 +128,7 @@ class Program
             var sizeLong = sizeof(long);
             var sizeBool = sizeof(bool);
             var sizeSampleUnion = sizeof(OpenXLSXCellData);
-            Console.WriteLine(
-                $"sizeOfIntPtr{sizeOfIntPtr}\nsizeOfPointer {sizeOfPointer}\nsizeLong{sizeLong}\nsizeSampleUnion {sizeSampleUnion}\nsizeBool{sizeBool}");
+            //Console.WriteLine($"sizeOfIntPtr{sizeOfIntPtr}\nsizeOfPointer {sizeOfPointer}\nsizeLong{sizeLong}\nsizeSampleUnion {sizeSampleUnion}\nsizeBool{sizeBool}");
         }
 
         // return;
@@ -195,7 +197,7 @@ class Program
 
 
         doc.Close();
-        // Console.WriteLine($"excel content\n {sb.ToString()}");
+        // //Console.WriteLine($"excel content\n {sb.ToString()}");
         Console.WriteLine($"read full excel cost {sw.ElapsedMilliseconds}ms");
     }
 }
