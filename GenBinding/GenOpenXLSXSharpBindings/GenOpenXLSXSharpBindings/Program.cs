@@ -42,7 +42,8 @@ public class LibOpenXLSX : ILibrary
     { 
         ctx.IgnoreHeadersWithName("pugixml");
         // ctx.IgnoreClassField("XLCellValue","m_value");
-        // ctx.IgnoreClassWithName("variant");
+        ctx.IgnoreClassWithName("OpenXLSXCellData");
+        ctx.IgnoreClassWithName("RowPosInfo");
         // ctx.IgnoreClassWithName("XLCellValue");
         // ctx.ignore("variant");
     }

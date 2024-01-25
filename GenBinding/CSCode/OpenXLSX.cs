@@ -9302,6 +9302,9 @@ namespace OpenXLSX
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?updateSheetName@XLWorksheet@OpenXLSX@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void UpdateSheetName(__IntPtr __instance, __IntPtr oldName, __IntPtr newName);
 
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?iterateAllCells@XLWorksheet@OpenXLSX@@QEBAXP6AX_KPEAX01@Z@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern void IterateAllCells(__IntPtr __instance, __IntPtr onReadSheetData);
+
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?lastCell@XLWorksheet@OpenXLSX@@QEBA?AVXLCellReference@2@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void LastCell(__IntPtr __instance, __IntPtr @return);
 
@@ -9556,6 +9559,12 @@ namespace OpenXLSX
                 __Internal.UpdateSheetName(__Instance, __arg0, __arg1);
                 __basicString0.Dispose();
                 __basicString1.Dispose();
+            }
+
+            public void IterateAllCells(global::OpenXLSX.OnReadSheetData onReadSheetData)
+            {
+                var __arg0 = onReadSheetData == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(onReadSheetData);
+                __Internal.IterateAllCells(__Instance, __arg0);
             }
 
             public static explicit operator global::OpenXLSX.OpenXLSX.XLWorksheet(global::OpenXLSX.OpenXLSX.XLXmlData xmlData)
@@ -10280,6 +10289,9 @@ namespace OpenXLSX
             Reverse = 1
         }
     }
+
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(__CallingConvention.Cdecl)]
+    public unsafe delegate void OnReadSheetData(ulong rowInfoCount, __IntPtr rowInfos, ulong cellTotalCount, __IntPtr CellsData);
 
     namespace OpenXLSX
     {
