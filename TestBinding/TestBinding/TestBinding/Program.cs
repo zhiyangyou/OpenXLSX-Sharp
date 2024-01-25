@@ -71,20 +71,15 @@ public class SheetData
             }
 
             sw.Restart();
-            var list = new List<string>();
             foreach (var cellData in _arrCellsData)
             {
                 if (cellData.ValueType == 5) // XLValueType::String
                 {
-                    var str = Marshal.PtrToStringUTF8(new IntPtr(cellData.PU8Str));
-                    list.Add(str);
-                    // Console.WriteLine(str);
-                    _dicAllStrs.TryAdd((IntPtr)cellData.PU8Str, str);
-                    2024年1月26日01:39:20  不理解为什么，cell中的字符串指针会出现重复，导致_dicAllStrs 添加的时候报错！！！
+                    _dicAllStrs.Add((IntPtr)cellData.PU8Str, Marshal.PtrToStringUTF8(new IntPtr(cellData.PU8Str)) ?? "");
                 }
             }
 
-            Console.WriteLine($"convertU8Str listCount {list.Count} _dicAllStrs {_dicAllStrs.Count} cost {sw.ElapsedTicks}   ticks");
+            Console.WriteLine($"convertU8Str _dicAllStrs {_dicAllStrs.Count} cost {sw.ElapsedTicks}   ticks");
         }
 
 
