@@ -9,9 +9,9 @@ C# binding library for [OpenXLSX](https://github.com/troldal/OpenXLSX)
 
 ## 效果
 
-- [用例1](https://github.com/zhiyangyou/OpenXLSX-Sharp/blob/main/TestInUnity/ExcelReaderTest/Assets/Editor/Plugin/TestExcelPerf.cs#L223)： 将excel中的数据打印成C#的string对象，效率提升了8倍左右 
+- [用例1](https://github.com/zhiyangyou/OpenXLSX-Sharp/blob/main/TestInUnity/ExcelReaderTest/Assets/Editor/Plugin/TestExcelPerf.cs#L223)： 将excel中的数据打印成C#的string，效率提升了8倍左右 
 
-
+<img src="docImages\perf.png" style="zoom: 50%;" />
 
 ## 怎么做
 
@@ -24,8 +24,12 @@ C# binding library for [OpenXLSX](https://github.com/troldal/OpenXLSX)
 
 ## 怎么用
 
-1. C#工程依赖的文件在[ReleaseDir文件夹](https://github.com/zhiyangyou/OpenXLSX-Sharp/tree/main/ReleaseDir)下，拷贝这些文件到C#工程中
-2. 这是demo代码
+1. C#工程依赖的文件在[ReleaseDir文件夹](https://github.com/zhiyangyou/OpenXLSX-Sharp/tree/main/ReleaseDir)下，拷贝这些文件到C#工程中，并添加依赖
+2. [demo代码](https://github.com/zhiyangyou/OpenXLSX-Sharp/blob/main/TestInUnity/ExcelReaderTest/Assets/Editor/Plugin/TestExcelPerf.cs#L164)
+
+
+
+参考[unity工程](https://github.com/zhiyangyou/OpenXLSX-Sharp/tree/main/TestInUnity/ExcelReaderTest)
 
 
 
