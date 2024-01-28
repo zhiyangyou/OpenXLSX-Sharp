@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelPlugins", "ExcelPlugins.csproj", "{d8d7f597-c4ce-de1f-55a2-8b9c7211a7a3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{34f4fe11-d311-f739-8e93-630b5fd228ee}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{1d73574f-60ea-5962-b255-1821f7bc921e}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{d8d7f597-c4ce-de1f-55a2-8b9c7211a7a3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{d8d7f597-c4ce-de1f-55a2-8b9c7211a7a3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34f4fe11-d311-f739-8e93-630b5fd228ee}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34f4fe11-d311-f739-8e93-630b5fd228ee}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1d73574f-60ea-5962-b255-1821f7bc921e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1d73574f-60ea-5962-b255-1821f7bc921e}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
