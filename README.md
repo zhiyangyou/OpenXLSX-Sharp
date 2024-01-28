@@ -7,6 +7,10 @@ C# binding library for [OpenXLSX](https://github.com/troldal/OpenXLSX)
 
 [NPOI](https://github.com/nissl-lab/npoi) 和 [EPPlus](https://github.com/JanKallman/EPPlus/releases/tag/v4.5.3)（免费版本）加载配置表有一点慢，几百几千行数据的加载需要几百ms甚至秒级别的速度
 
+## 效果
+
+- [用例1](https://github.com/zhiyangyou/OpenXLSX-Sharp/blob/main/TestInUnity/ExcelReaderTest/Assets/Editor/Plugin/TestExcelPerf.cs#L223)： 将excel中的数据打印成C#的string对象，效率提升了8倍左右 
+
 
 
 ## 怎么做
