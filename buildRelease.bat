@@ -21,6 +21,7 @@ set "OpenXLSXCSFile=!csFileDir!\OpenXLSX.cs"
 set "StdCSFile=!csFileDir!\Std.cs" 
 set "CppSharpRuntimeFile=!cppSharpDllDir!\CppSharp.Runtime.dll" 
 set "CppSharpStd=!cppSharpDllDir!\Std-symbols.dll" 
+set "Wrapper=!cppSharpDllDir!\OpenXLSXWrapper.cs" 
 
 rem 构造目标文件路径
 set "targetDir=!curDir!ReleaseDir"
@@ -30,6 +31,7 @@ set "OpenXLSXCSFileCopy=!targetDir!\OpenXLSX.cs"
 set "StdCSFileCopy=!targetDir!\Std.cs"
 set "CppSharpRuntimeFileCopy=!targetDir!\CppSharp.Runtime.dll" 
 set "CppSharpStdCopy=!targetDir!\Std-symbols.dll" 
+set "WrapperCopy=!targetDir!\\OpenXLSXWrapper.cs" 
 
 rem 如果目标文件夹不存在，则创建
 if not exist "!targetDir!" mkdir "!targetDir!"
@@ -41,5 +43,6 @@ copy /y "!OpenXLSXCSFile!" "!OpenXLSXCSFileCopy!"
 copy /y "!StdCSFile!" "!StdCSFileCopy!"
 copy /y "!CppSharpRuntimeFile!" "!CppSharpRuntimeFileCopy!"
 copy /y "!CppSharpStd!" "!CppSharpStdCopy!"
+copy /y "!Wrapper!" "!WrapperCopy!"
 
 echo 文件拷贝完成
