@@ -35,7 +35,7 @@ C# binding library for [OpenXLSX](https://github.com/troldal/OpenXLSX)
 
 ## 注意
 
-- OpenXLSX的cell随机读写的效率也不高，最高效的方式是使用迭代器顺序遍历cell格子（连续读写）。 OpenXLSX随机读写的效率不高和xml解析库定义的数据结构有关系（[链式结构](https://github.com/troldal/OpenXLSX/blob/master/OpenXLSX/sources/utilities/XLUtilities.hpp#L47)）如图： <img src="docImages\RandomAccessByWhileLoop.png" style="zoom:30%;" />
+- OpenXLSX的cell随机读写的效率也不高，最高效的方式是使用迭代器顺序遍历cell格子（连续读写）。 OpenXLSX随机读写的效率不高和xml解析库定义的数据结构有关系（[链式结构](https://github.com/troldal/OpenXLSX/blob/master/OpenXLSX/sources/utilities/XLUtilities.hpp#L47)）如图。NPOI使用SortedList规避了这个问题 <img src="docImages\RandomAccessByWhileLoop.png" style="zoom:30%;" />
 - 尽量不使用CppSharp为OpenXLSX生成的绑定代码，如果要使用，注意CppSharp生成的一些API的调用会在C#的非托管堆上构造C#对象，比如 XLCell XLWorksheet::cell 这个函数如果在C#侧被调用，注意使用using var cell = sheet.cell();让编译器生成Dispose的调用，否则内存泄露。 
   - CppSharp默认规则生成的代码是这样的。解决办法是，定制生成规则，给C#的绑定类型生成析构函数，在析构中自动调用Dispose。
 - C++侧的异常没有处理，所以软件鲁棒性比较烂。
