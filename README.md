@@ -5,7 +5,7 @@ C# binding library for [OpenXLSX](https://github.com/troldal/OpenXLSX)
 
 ## 为什么
 
-[NPOI](https://github.com/nissl-lab/npoi) 和 [EPPlus](https://github.com/JanKallman/EPPlus/releases/tag/v4.5.3)（免费版本）加载配置表有一点慢，几百几千行数据的加载需要几百ms甚至秒级别的速度
+[NPOI](https://github.com/nissl-lab/npoi) 和 [EPPlus](https://github.com/JanKallman/EPPlus/releases/tag/v4.5.3)（免费版本）加载配置表有一点慢，加载需要几百ms甚至秒级别的速度
 
 ## 效果
 
