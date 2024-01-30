@@ -338,6 +338,9 @@
      <Reference Include="Unity.Plastic.Antlr3.Runtime">
      <HintPath>I:\__workSpace\_Github\OpenXLSX-Sharp\TestInUnity\ExcelReaderTest\Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
      </Reference>
+     <Reference Include="NPOIMerge">
+     <HintPath>I:\__workSpace\_Github\OpenXLSX-Sharp\TestInUnity\ExcelReaderTest\Assets\Editor\Plugin\NPOI\NPOIMerge.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
      <HintPath>I:\__workSpace\_Github\OpenXLSX-Sharp\TestInUnity\ExcelReaderTest\Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
      </Reference>
@@ -353,14 +356,11 @@
      <Reference Include="Unity.VisualScripting.TextureAssets">
      <HintPath>I:\__workSpace\_Github\OpenXLSX-Sharp\TestInUnity\ExcelReaderTest\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
      </Reference>
-     <Reference Include="unityplastic">
-     <HintPath>I:\__workSpace\_Github\OpenXLSX-Sharp\TestInUnity\ExcelReaderTest\Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
-     </Reference>
-     <Reference Include="NPOIMerge">
-     <HintPath>I:\__workSpace\_Github\OpenXLSX-Sharp\TestInUnity\ExcelReaderTest\Assets\Editor\Plugin\NPOI\NPOIMerge.dll</HintPath>
-     </Reference>
      <Reference Include="CppSharp.Runtime">
      <HintPath>I:\__workSpace\_Github\OpenXLSX-Sharp\TestInUnity\ExcelReaderTest\Assets\Editor\Plugin\OpenXLSX-Sharp\CppSharp.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="unityplastic">
+     <HintPath>I:\__workSpace\_Github\OpenXLSX-Sharp\TestInUnity\ExcelReaderTest\Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>F:\_UnityWorkSpace\UnityInstall\2023.1.17f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

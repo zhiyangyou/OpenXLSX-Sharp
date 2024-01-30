@@ -225,15 +225,15 @@ public class TestExcelPerf
     {
         string excelFilePath = Path.Combine(Application.dataPath, "test.xlsx");
         string sheetName = "test1";
-        int forCount = 5;
+        int forCount = 10;
         var fileName = Path.GetFileName(excelFilePath);
         var OpenXLSXTime = CostTime(forCount, () => OpenXLSX(excelFilePath, sheetName), $"OpenXLSX打开{fileName}");
-        var NPOITime_Foreach = CostTime(forCount, () => NPOI_Foreach(excelFilePath, sheetName), $"NPOI_Foreach打开{fileName}");
+        // var NPOITime_Foreach = CostTime(forCount, () => NPOI_Foreach(excelFilePath, sheetName), $"NPOI_Foreach打开{fileName}");
         var NPOI2Time_RamdonAccess = CostTime(forCount, () => NPOI_RandomAccess(excelFilePath, sheetName), $"NPOI_RandomAccess打开{fileName}");
         Debug.Log(
-            $"NPOI性能倍数: {((double)NPOITime_Foreach.Item2 / (double)OpenXLSXTime.Item2):F1}  {((double)NPOI2Time_RamdonAccess.Item2 / (double)OpenXLSXTime.Item2):F1}   " +
+            $"NPOI性能倍数:  {((double)NPOI2Time_RamdonAccess.Item2 / (double)OpenXLSXTime.Item2):F1}   " +
             $"excel {fileName}" +
-            $"\nCost OpenXLSX:{OpenXLSXTime.Item1} NPOI_Foreach:{NPOITime_Foreach.Item1}  NPOI2_RandomAccess:{NPOI2Time_RamdonAccess.Item1} "
+            $"\nCost OpenXLSX:{OpenXLSXTime.Item1}  NPOI2_RandomAccess:{NPOI2Time_RamdonAccess.Item1} "
             
             );
         // CostTime(() => EPPlus(excelFilePath, sheetName), $"EPPlus打开{fileName}");
