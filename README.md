@@ -19,6 +19,9 @@ C# binding library for [OpenXLSX](https://github.com/troldal/OpenXLSX)
 - 编译OpenXLSX，导出动态库（dll）**（done）**
 - 使用CppSharp运行时，为CLR导入dll符号。**（done）**
 - 编写一些OpenXLSX在C#和C++两侧的一些适配代码 **（done）**
+  - 连续迭代
+  - 小修改，规避大量临时对象构建（内存申请）
+
 
 
 
