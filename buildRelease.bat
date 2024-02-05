@@ -9,6 +9,7 @@ rem 调用 Visual Studio 2022 打开解决方案并编译
 set "slnFile=!curDir!OpenXLSX\CmakeBuild\OpenXLSX.sln"
 echo !slnFile!
 "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe"   !slnFile!  /build  "RelWithDebInfo|x64"  /project OpenXLSX   
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\devenv.exe"   !slnFile!  /build  "RelWithDebInfo|x64"  /project OpenXLSX   
 
 rem 构造源文件路径
 set "dllDir=!curDir!OpenXLSX\CmakeBuild\output\RelWithDebInfo"

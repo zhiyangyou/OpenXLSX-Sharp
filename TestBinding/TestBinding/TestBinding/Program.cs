@@ -10,14 +10,14 @@ class Program
     static void Main()
     {
         unsafe
-        { 
+        {
             Console.WriteLine($"OpenXLSXCellData {sizeof(OpenXLSXCellData)}");
-            Console.WriteLine($"RowPosInfo {sizeof(RowPosInfo)}"); 
+            Console.WriteLine($"RowPosInfo {sizeof(RowPosInfo)}");
         }
 
         List<(string, string)> listExcels = new List<(string, string)>()
-        { 
-            ("G:\\temp\\test2.xlsx", "testSheet"),   
+        {
+            ("D:\\temp\\test2.xlsx", "testSheet"),
         };
 
         foreach (var tpExcelSheet in listExcels)
@@ -47,7 +47,8 @@ class Program
                     {
                         unsafe
                         {
-                            sbAllCellStrings.AppendLine(sheetData.GetCellString(cell.PU8Str));
+                            sbAllCellStrings.Append(sheetData.GetCellString(cell.PU8Str));
+                            sbAllCellStrings.Append("|");
                         }
                     }
 
@@ -60,11 +61,14 @@ class Program
                         _dicCellTypeCounter[cell.ValueType]++;
                     }
                 }
+
+                sbAllCellStrings.AppendLine("");
             }
 
             swIterate.Stop();
             var iterateCostTime = swIterate.ElapsedMilliseconds;
-        
+
+            Console.WriteLine($"sbAllCellStrings.ToString().Length {sbAllCellStrings.ToString()}");
             Console.WriteLine($"sbAllCellStrings.ToString().Length {sbAllCellStrings.ToString().Length}");
             Console.WriteLine($"iterate datas CostTime = {iterateCostTime}ms");
             Console.WriteLine($"read full excel cost {costReadFullTime}ms");
