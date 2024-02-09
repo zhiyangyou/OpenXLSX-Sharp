@@ -21,6 +21,8 @@ C# binding library for [OpenXLSX](https://github.com/troldal/OpenXLSX)
 - 编写一些OpenXLSX在C#和C++两侧的一些适配代码 **（done）**
   - 连续迭代
   - 小修改，规避大量临时对象构建（内存申请）
+  - xxHash加速按字符串查询
+  - 紧凑的共享字符串的数据结构（hash）
 
 
 
