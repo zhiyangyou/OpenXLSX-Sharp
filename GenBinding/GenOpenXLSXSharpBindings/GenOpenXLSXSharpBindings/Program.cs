@@ -44,6 +44,7 @@ public class LibOpenXLSX : ILibrary
         // ctx.IgnoreClassField("XLCellValue","m_value");
         ctx.IgnoreClassWithName("OpenXLSXCellData");
         ctx.IgnoreClassWithName("RowPosInfo");
+        ctx.IgnoreClassWithName("XLSheetBase");
         // ctx.IgnoreClassWithName("XLCellValue");
         // ctx.ignore("variant");
     }

@@ -12570,8 +12570,8 @@ namespace OpenXLSX
                 internal global::OpenXLSX.OpenXLSX.XLWorkbook.__Internal m_workbook;
                 internal global::OpenXLSX.OpenXLSX.IZipArchive.__Internal m_archive;
 
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0XLDocument@OpenXLSX@@QEAA@AEBVIZipArchive@1@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern __IntPtr ctor(__IntPtr __instance, __IntPtr zipArchive);
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0XLDocument@OpenXLSX@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern __IntPtr ctor(__IntPtr __instance);
 
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0XLDocument@OpenXLSX@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVIZipArchive@1@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr ctor(__IntPtr __instance, __IntPtr docPath, __IntPtr zipArchive);
@@ -12720,15 +12720,12 @@ namespace OpenXLSX
             }
 
             /// <summary>Constructor. The default constructor with no arguments.</summary>
-            public XLDocument(global::OpenXLSX.OpenXLSX.IZipArchive zipArchive)
+            public XLDocument()
             {
                 __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLDocument.__Internal));
                 __ownsNativeInstance = true;
                 __RecordNativeToManagedMapping(__Instance, this);
-                if (ReferenceEquals(zipArchive, null))
-                    throw new global::System.ArgumentNullException("zipArchive", "Cannot be null because it is a C++ reference (&).");
-                var __arg0 = zipArchive.__Instance;
-                __Internal.ctor(__Instance, __arg0);
+                __Internal.ctor(__Instance);
             }
 
             /// <summary>Constructor. An alternative constructor, taking the path to the .xlsx file as an argument.</summary>
@@ -12978,11 +12975,6 @@ namespace OpenXLSX
                 var ___ret = __Internal.HasXmlData(__Instance, __arg0);
                 __basicString0.Dispose();
                 return ___ret;
-            }
-
-            public static explicit operator global::OpenXLSX.OpenXLSX.XLDocument(global::OpenXLSX.OpenXLSX.IZipArchive zipArchive)
-            {
-                return new global::OpenXLSX.OpenXLSX.XLDocument(zipArchive);
             }
 
             /// <summary>Get the filename of the current document, e.g. &quot;spreadsheet.xlsx&quot;.</summary>
@@ -17611,569 +17603,8 @@ namespace OpenXLSX
             VeryHidden = 2
         }
 
-        namespace XLSheetBase
-        {
-            [StructLayout(LayoutKind.Sequential, Size = 8)]
-            public unsafe partial struct __Internal
-            {
-                internal __IntPtr m_xmlData;
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern __IntPtr ctorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEAA@PEAVXLXmlData@1@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern __IntPtr ctorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance, __IntPtr xmlData);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEAA@AEBV01@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern __IntPtr cctorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v_1(__IntPtr __instance, __IntPtr other);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??1?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void dtorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setActive@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEAA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
-                [return: MarshalAs(UnmanagedType.I1)]
-                internal static extern bool SetActivec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?clone@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void Clonec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance, __IntPtr newName);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?visibility@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEBA?AW4XLSheetState@2@XZ", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern global::OpenXLSX.OpenXLSX.XLSheetState Visibilityc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setVisibility@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEAAXW4XLSheetState@2@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void SetVisibilityc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance, global::OpenXLSX.OpenXLSX.XLSheetState state);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?color@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEBA?AVXLColor@2@XZ", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void Colorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance, __IntPtr @return);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setColor@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEAAXAEBVXLColor@2@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void SetColorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance, __IntPtr color);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?index@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEBAGXZ", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern ushort Indexc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setIndex@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEAAXG@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void SetIndexc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance, ushort index);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?name@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void Namec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance, __IntPtr @return);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setName@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void SetNamec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance, __IntPtr sheetName);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?isSelected@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
-                [return: MarshalAs(UnmanagedType.I1)]
-                internal static extern bool IsSelectedc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setSelected@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEAAX_N@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void SetSelectedc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance, bool selected);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?isActive@?$XLSheetBase@VXLWorksheet@OpenXLSX@@X@OpenXLSX@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
-                [return: MarshalAs(UnmanagedType.I1)]
-                internal static extern bool IsActivec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__IntPtr __instance);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern __IntPtr ctorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEAA@PEAVXLXmlData@1@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern __IntPtr ctorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance, __IntPtr xmlData);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEAA@AEBV01@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern __IntPtr cctorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v_1(__IntPtr __instance, __IntPtr other);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??1?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void dtorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?clone@?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void Clonec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance, __IntPtr newName);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?visibility@?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEBA?AW4XLSheetState@2@XZ", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern global::OpenXLSX.OpenXLSX.XLSheetState Visibilityc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setVisibility@?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEAAXW4XLSheetState@2@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void SetVisibilityc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance, global::OpenXLSX.OpenXLSX.XLSheetState state);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?color@?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEBA?AVXLColor@2@XZ", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void Colorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance, __IntPtr @return);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setColor@?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEAAXAEBVXLColor@2@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void SetColorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance, __IntPtr color);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?index@?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEBAGXZ", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern ushort Indexc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setIndex@?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEAAXG@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void SetIndexc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance, ushort index);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?name@?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void Namec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance, __IntPtr @return);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setName@?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void SetNamec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance, __IntPtr sheetName);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?isSelected@?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEBA_NXZ", CallingConvention = __CallingConvention.Cdecl)]
-                [return: MarshalAs(UnmanagedType.I1)]
-                internal static extern bool IsSelectedc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance);
-
-                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?setSelected@?$XLSheetBase@VXLChartsheet@OpenXLSX@@X@OpenXLSX@@QEAAX_N@Z", CallingConvention = __CallingConvention.Cdecl)]
-                internal static extern void SetSelectedc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__IntPtr __instance, bool selected);
-            }
-        }
-
-        /// <summary>
-        /// <para>The XLSheetBase class is the base class for the XLWorksheet and XLChartsheet classes. However,</para>
-        /// <para>it is not a base class in the traditional sense. Rather, it provides common functionality that is</para>
-        /// <para>inherited via the CRTP (Curiously Recurring Template Pattern) pattern.</para>
-        /// </summary>
-        public unsafe partial class XLSheetBase<T, > : global::OpenXLSX.OpenXLSX.XLXmlFile, IDisposable
-        {
-            internal static new XLSheetBase<T, > __CreateInstance(__IntPtr native, bool skipVTables = false)
-            {
-                if (native == __IntPtr.Zero)
-                    return null;
-                return new XLSheetBase<T, >(native.ToPointer(), skipVTables);
-            }
-
-            internal static new XLSheetBase<T, > __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
-            {
-                if (native == __IntPtr.Zero)
-                    return null;
-                if (__TryGetNativeToManagedMapping(native, out var managed))
-                    return (XLSheetBase<T, >)managed;
-                var result = __CreateInstance(native, skipVTables);
-                if (saveInstance)
-                    __RecordNativeToManagedMapping(native, result);
-                return result;
-            }
-
-            internal static XLSheetBase<T, > __CreateInstance(global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal native, bool skipVTables = false)
-            {
-                return new XLSheetBase<T, >(native, skipVTables);
-            }
-
-            private static void* __CopyValue(global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal native)
-            {
-                var ret = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal));
-                *(global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal*) ret = native;
-                return ret.ToPointer();
-            }
-
-            private XLSheetBase(global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal native, bool skipVTables = false)
-                : this(__CopyValue(native), skipVTables)
-            {
-                __ownsNativeInstance = true;
-                __RecordNativeToManagedMapping(__Instance, this);
-            }
-
-            protected XLSheetBase(void* native, bool skipVTables = false)
-                : base((void*) native)
-            {
-            }
-
-            /// <summary>Constructor</summary>
-            public XLSheetBase()
-                : this((void*) null)
-            {
-                var __T = typeof(T);
-                var __ = typeof();
-                if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                {
-                    __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal));
-                    __ownsNativeInstance = true;
-                    __RecordNativeToManagedMapping(__Instance, this);
-                    global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.ctorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance);
-                    return;
-                }
-                if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                {
-                    __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal));
-                    __ownsNativeInstance = true;
-                    __RecordNativeToManagedMapping(__Instance, this);
-                    global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.ctorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance);
-                    return;
-                }
-                throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-            }
-
-            /// <summary>
-            /// <para>The constructor. There are no default constructor, so all parameters must be provided for</para>
-            /// <para>constructing an XLAbstractSheet object. Since this is a pure abstract class, instantiation is only</para>
-            /// <para>possible via one of the derived classes.</para>
-            /// </summary>
-            public XLSheetBase(global::OpenXLSX.OpenXLSX.XLXmlData xmlData)
-                : this((void*) null)
-            {
-                var __T = typeof(T);
-                var __ = typeof();
-                if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                {
-                    __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal));
-                    __ownsNativeInstance = true;
-                    __RecordNativeToManagedMapping(__Instance, this);
-                    var __arg0 = xmlData is null ? __IntPtr.Zero : xmlData.__Instance;
-                    global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.ctorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance, __arg0);
-                    return;
-                }
-                if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                {
-                    __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal));
-                    __ownsNativeInstance = true;
-                    __RecordNativeToManagedMapping(__Instance, this);
-                    var __arg0 = xmlData is null ? __IntPtr.Zero : xmlData.__Instance;
-                    global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.ctorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance, __arg0);
-                    return;
-                }
-                throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-            }
-
-            /// <summary>The copy constructor.</summary>
-            /// <param name="other">The object to be copied.</param>
-            /// <remarks>The default copy constructor is used, i.e. only shallow copying of pointer data members.</remarks>
-            public XLSheetBase(global::OpenXLSX.OpenXLSX.XLSheetBase<T, > other)
-                : this((void*) null)
-            {
-                var __T = typeof(T);
-                var __ = typeof();
-                if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                {
-                    __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal));
-                    __ownsNativeInstance = true;
-                    __RecordNativeToManagedMapping(__Instance, this);
-                    *((global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal*) __Instance) = *((global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal*) other.__Instance);
-                    return;
-                }
-                if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                {
-                    __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal));
-                    __ownsNativeInstance = true;
-                    __RecordNativeToManagedMapping(__Instance, this);
-                    *((global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal*) __Instance) = *((global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal*) other.__Instance);
-                    return;
-                }
-                throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-            }
-
-            partial void DisposePartial(bool disposing);
-
-            internal protected override void Dispose(bool disposing, bool callNativeDtor )
-            {
-                if (__Instance == IntPtr.Zero)
-                    return;
-                NativeToManagedMap.TryRemove(__Instance, out _);
-                DisposePartial(disposing);
-                if (callNativeDtor)
-                {
-                    var __T = typeof(T);
-                    var __ = typeof();
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.dtorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance);
-                        return;
-                    }
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.dtorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance);
-                        return;
-                    }
-                    throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-                if (__ownsNativeInstance)
-                    Marshal.FreeHGlobal(__Instance);
-                __Instance = IntPtr.Zero;
-            }
-
-            public bool SetActive()
-            {
-                var __T = typeof(T);
-                var __ = typeof();
-                if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                {
-                    var ___ret = global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.SetActivec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance);
-                    return ___ret;
-                }
-                if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                {
-                    throw new MissingMethodException("Method SetActive ignored in specialization global::OpenXLSX.OpenXLSX.XLSheetBase<global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-                throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-            }
-
-            /// <summary>Method for cloning the sheet.</summary>
-            /// <param name="newName">A std::string with the name of the clone</param>
-            /// <returns>A pointer to the cloned object.</returns>
-            /// <remarks>This is a pure abstract method. I.e. it is implemented in subclasses.</remarks>
-            public void Clone(string newName)
-            {
-                var __T = typeof(T);
-                var __ = typeof();
-                if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                {
-                    var __basicString0 = new global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>();
-                    global::Std.BasicStringExtensions.Assign(__basicString0, newName);
-                    var __arg0 = __basicString0.__Instance;
-                    global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.Clonec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance, __arg0);
-                    __basicString0.Dispose();
-                    return;
-                }
-                if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                {
-                    var __basicString0 = new global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>();
-                    global::Std.BasicStringExtensions.Assign(__basicString0, newName);
-                    var __arg0 = __basicString0.__Instance;
-                    global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.Clonec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance, __arg0);
-                    __basicString0.Dispose();
-                    return;
-                }
-                throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-            }
-
-            public static explicit operator global::OpenXLSX.OpenXLSX.XLSheetBase<T, >(global::OpenXLSX.OpenXLSX.XLXmlData xmlData)
-            {
-                return new global::OpenXLSX.OpenXLSX.XLSheetBase<T, >(xmlData);
-            }
-
-            public global::OpenXLSX.OpenXLSX.XLSheetState Visibility
-            {
-                get
-                {
-                    var __T = typeof(T);
-                    var __ = typeof();
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var ___ret = global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.Visibilityc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance);
-                        return ___ret;
-                    }
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var ___ret = global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.Visibilityc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance);
-                        return ___ret;
-                    }
-                    throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-
-                set
-                {
-                    var __T = typeof(T);
-                    var __ = typeof();
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.SetVisibilityc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance, value);
-                        return;
-                    }
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.SetVisibilityc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance, value);
-                        return;
-                    }
-                    throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-            }
-
-            /// <remarks>To be implemented.</remarks>
-            public global::OpenXLSX.OpenXLSX.XLColor Color
-            {
-                get
-                {
-                    var __T = typeof(T);
-                    var __ = typeof();
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var ___ret = new global::OpenXLSX.OpenXLSX.XLColor.__Internal();
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.Colorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance, new IntPtr(&___ret));
-                        var _____ret = global::OpenXLSX.OpenXLSX.XLColor.__CreateInstance(___ret);
-                        global::OpenXLSX.OpenXLSX.XLColor.__Internal.dtor(new __IntPtr(&___ret));
-                        return _____ret;
-                    }
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var ___ret = new global::OpenXLSX.OpenXLSX.XLColor.__Internal();
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.Colorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance, new IntPtr(&___ret));
-                        var _____ret = global::OpenXLSX.OpenXLSX.XLColor.__CreateInstance(___ret);
-                        global::OpenXLSX.OpenXLSX.XLColor.__Internal.dtor(new __IntPtr(&___ret));
-                        return _____ret;
-                    }
-                    throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-
-                set
-                {
-                    var __T = typeof(T);
-                    var __ = typeof();
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        if (ReferenceEquals(value, null))
-                            throw new global::System.ArgumentNullException("value", "Cannot be null because it is a C++ reference (&).");
-                        var __arg0 = value.__Instance;
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.SetColorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance, __arg0);
-                        return;
-                    }
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        if (ReferenceEquals(value, null))
-                            throw new global::System.ArgumentNullException("value", "Cannot be null because it is a C++ reference (&).");
-                        var __arg0 = value.__Instance;
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.SetColorc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance, __arg0);
-                        return;
-                    }
-                    throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-            }
-
-            public ushort Index
-            {
-                get
-                {
-                    var __T = typeof(T);
-                    var __ = typeof();
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var ___ret = global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.Indexc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance);
-                        return ___ret;
-                    }
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var ___ret = global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.Indexc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance);
-                        return ___ret;
-                    }
-                    throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-
-                set
-                {
-                    var __T = typeof(T);
-                    var __ = typeof();
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.SetIndexc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance, value);
-                        return;
-                    }
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.SetIndexc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance, value);
-                        return;
-                    }
-                    throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-            }
-
-            /// <summary>Method to retrieve the name of the sheet.</summary>
-            /// <param name="sheetName">A std::string with the new name.</param>
-            /// <returns>
-            /// <para>A std::string with the sheet name.</para>
-            /// <para>Method for renaming the sheet.</para>
-            /// </returns>
-            public string Name
-            {
-                get
-                {
-                    var __T = typeof(T);
-                    var __ = typeof();
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var ___ret = new global::Std.BasicString.__Internalc__N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C();
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.Namec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance, new IntPtr(&___ret));
-                        var __basicStringRet0 = global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>.__CreateInstance(new __IntPtr(&___ret));
-                        var __retString0 = global::Std.BasicStringExtensions.Data(__basicStringRet0);
-                        __basicStringRet0.Dispose();
-                        return __retString0;
-                    }
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var ___ret = new global::Std.BasicString.__Internalc__N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C();
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.Namec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance, new IntPtr(&___ret));
-                        var __basicStringRet0 = global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>.__CreateInstance(new __IntPtr(&___ret));
-                        var __retString0 = global::Std.BasicStringExtensions.Data(__basicStringRet0);
-                        __basicStringRet0.Dispose();
-                        return __retString0;
-                    }
-                    throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-
-                set
-                {
-                    var __T = typeof(T);
-                    var __ = typeof();
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var __basicString0 = new global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>();
-                        global::Std.BasicStringExtensions.Assign(__basicString0, value);
-                        var __arg0 = __basicString0.__Instance;
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.SetNamec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance, __arg0);
-                        __basicString0.Dispose();
-                        return;
-                    }
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var __basicString0 = new global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>();
-                        global::Std.BasicStringExtensions.Assign(__basicString0, value);
-                        var __arg0 = __basicString0.__Instance;
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.SetNamec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance, __arg0);
-                        __basicString0.Dispose();
-                        return;
-                    }
-                    throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-            }
-
-            public bool Selected
-            {
-                get
-                {
-                    var __T = typeof(T);
-                    var __ = typeof();
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var ___ret = global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.IsSelectedc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance);
-                        return ___ret;
-                    }
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var ___ret = global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.IsSelectedc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance);
-                        return ___ret;
-                    }
-                    throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-
-                set
-                {
-                    var __T = typeof(T);
-                    var __ = typeof();
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.SetSelectedc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance, value);
-                        return;
-                    }
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.SetSelectedc__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v(__Instance, value);
-                        return;
-                    }
-                    throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-            }
-
-            public bool IsActive
-            {
-                get
-                {
-                    var __T = typeof(T);
-                    var __ = typeof();
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLWorksheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        var ___ret = global::OpenXLSX.OpenXLSX.XLSheetBase.__Internal.IsActivec__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v(__Instance);
-                        return ___ret;
-                    }
-                    if (__T.IsAssignableFrom(typeof(global::OpenXLSX.OpenXLSX.XLChartsheet)) && __.IsAssignableFrom(typeof(void)))
-                    {
-                        throw new MissingMethodException("Method IsActive missing from explicit specialization global::OpenXLSX.OpenXLSX.XLSheetBase<global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                    }
-                    throw new ArgumentOutOfRangeException("T, ", string.Join(", ", new[] { typeof(T).FullName, typeof().FullName }), "global::OpenXLSX.OpenXLSX.XLSheetBase<T, > maps a C++ template class and therefore it only supports a limited set of types and their subclasses: <global::OpenXLSX.OpenXLSX.XLWorksheet, object>, <global::OpenXLSX.OpenXLSX.XLChartsheet, object>.");
-                }
-            }
-        }
-
         /// <summary>A class encapsulating an Excel worksheet. Access to XLWorksheet objects should be via the workbook object.</summary>
-        public unsafe partial class XLWorksheet : global::OpenXLSX.OpenXLSX.XLSheetBase<global::OpenXLSX.OpenXLSX.XLWorksheet, object>, IDisposable
+        public unsafe partial class XLWorksheet : IDisposable
         {
             [StructLayout(LayoutKind.Sequential, Size = 56)]
             public partial struct __Internal
@@ -18232,6 +17663,9 @@ namespace OpenXLSX
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?column@XLWorksheet@OpenXLSX@@QEBA?AVXLColumn@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void Column(__IntPtr __instance, __IntPtr @return, __IntPtr columnRef);
 
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?iterateAllCells@XLWorksheet@OpenXLSX@@QEBAXP6AX_KPEAX01@Z@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern void IterateAllCells(__IntPtr __instance, __IntPtr onReadSheetData);
+
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?updateSheetName@XLWorksheet@OpenXLSX@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void UpdateSheetName(__IntPtr __instance, __IntPtr oldName, __IntPtr newName);
 
@@ -18281,14 +17715,32 @@ namespace OpenXLSX
                 internal static extern __IntPtr Merges(__IntPtr __instance);
             }
 
-            internal static new XLWorksheet __CreateInstance(__IntPtr native, bool skipVTables = false)
+            public __IntPtr __Instance { get; protected set; }
+
+            internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::OpenXLSX.OpenXLSX.XLWorksheet> NativeToManagedMap =
+                new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::OpenXLSX.OpenXLSX.XLWorksheet>();
+
+            internal static void __RecordNativeToManagedMapping(IntPtr native, global::OpenXLSX.OpenXLSX.XLWorksheet managed)
+            {
+                NativeToManagedMap[native] = managed;
+            }
+
+            internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::OpenXLSX.OpenXLSX.XLWorksheet managed)
+            {
+    
+                return NativeToManagedMap.TryGetValue(native, out managed);
+            }
+
+            protected bool __ownsNativeInstance;
+
+            internal static XLWorksheet __CreateInstance(__IntPtr native, bool skipVTables = false)
             {
                 if (native == __IntPtr.Zero)
                     return null;
                 return new XLWorksheet(native.ToPointer(), skipVTables);
             }
 
-            internal static new XLWorksheet __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
+            internal static XLWorksheet __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
             {
                 if (native == __IntPtr.Zero)
                     return null;
@@ -18320,13 +17772,14 @@ namespace OpenXLSX
             }
 
             protected XLWorksheet(void* native, bool skipVTables = false)
-                : base((void*) native)
             {
+                if (native == null)
+                    return;
+                __Instance = new __IntPtr(native);
             }
 
             /// <summary>Default constructor</summary>
             public XLWorksheet()
-                : this((void*) null)
             {
                 __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLWorksheet.__Internal));
                 __ownsNativeInstance = true;
@@ -18335,7 +17788,6 @@ namespace OpenXLSX
             }
 
             public XLWorksheet(global::OpenXLSX.OpenXLSX.XLXmlData xmlData)
-                : this((void*) null)
             {
                 __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLWorksheet.__Internal));
                 __ownsNativeInstance = true;
@@ -18346,7 +17798,6 @@ namespace OpenXLSX
 
             /// <summary>Copy Constructor.</summary>
             public XLWorksheet(global::OpenXLSX.OpenXLSX.XLWorksheet other)
-                : this((void*) null)
             {
                 __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLWorksheet.__Internal));
                 __ownsNativeInstance = true;
@@ -18357,9 +17808,14 @@ namespace OpenXLSX
                 __Internal.cctor_1(__Instance, __arg0);
             }
 
+            public void Dispose()
+            {
+                Dispose(disposing: true, callNativeDtor : __ownsNativeInstance );
+            }
+
             partial void DisposePartial(bool disposing);
 
-            internal protected override void Dispose(bool disposing, bool callNativeDtor )
+            internal protected virtual void Dispose(bool disposing, bool callNativeDtor )
             {
                 if (__Instance == IntPtr.Zero)
                     return;
@@ -18556,6 +18012,12 @@ namespace OpenXLSX
                 return _____ret;
             }
 
+            public void IterateAllCells(global::OpenXLSX.OnReadSheetData onReadSheetData)
+            {
+                var __arg0 = onReadSheetData == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(onReadSheetData);
+                __Internal.IterateAllCells(__Instance, __arg0);
+            }
+
             public void UpdateSheetName(string oldName, string newName)
             {
                 var __basicString0 = new global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>();
@@ -18744,7 +18206,7 @@ namespace OpenXLSX
 
         /// <summary>Class representing the an Excel chartsheet.</summary>
         /// <remarks>This class is largely unimplemented and works just as a placeholder.</remarks>
-        public unsafe partial class XLChartsheet : global::OpenXLSX.OpenXLSX.XLSheetBase<global::OpenXLSX.OpenXLSX.XLChartsheet, object>, IDisposable
+        public unsafe partial class XLChartsheet : IDisposable
         {
             [StructLayout(LayoutKind.Sequential, Size = 8)]
             public partial struct __Internal
@@ -18764,14 +18226,32 @@ namespace OpenXLSX
                 internal static extern void dtor(__IntPtr __instance);
             }
 
-            internal static new XLChartsheet __CreateInstance(__IntPtr native, bool skipVTables = false)
+            public __IntPtr __Instance { get; protected set; }
+
+            internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::OpenXLSX.OpenXLSX.XLChartsheet> NativeToManagedMap =
+                new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::OpenXLSX.OpenXLSX.XLChartsheet>();
+
+            internal static void __RecordNativeToManagedMapping(IntPtr native, global::OpenXLSX.OpenXLSX.XLChartsheet managed)
+            {
+                NativeToManagedMap[native] = managed;
+            }
+
+            internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::OpenXLSX.OpenXLSX.XLChartsheet managed)
+            {
+    
+                return NativeToManagedMap.TryGetValue(native, out managed);
+            }
+
+            protected bool __ownsNativeInstance;
+
+            internal static XLChartsheet __CreateInstance(__IntPtr native, bool skipVTables = false)
             {
                 if (native == __IntPtr.Zero)
                     return null;
                 return new XLChartsheet(native.ToPointer(), skipVTables);
             }
 
-            internal static new XLChartsheet __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
+            internal static XLChartsheet __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
             {
                 if (native == __IntPtr.Zero)
                     return null;
@@ -18803,13 +18283,14 @@ namespace OpenXLSX
             }
 
             protected XLChartsheet(void* native, bool skipVTables = false)
-                : base((void*) native)
             {
+                if (native == null)
+                    return;
+                __Instance = new __IntPtr(native);
             }
 
             /// <summary>Default constructor</summary>
             public XLChartsheet()
-                : this((void*) null)
             {
                 __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLChartsheet.__Internal));
                 __ownsNativeInstance = true;
@@ -18818,7 +18299,6 @@ namespace OpenXLSX
             }
 
             public XLChartsheet(global::OpenXLSX.OpenXLSX.XLXmlData xmlData)
-                : this((void*) null)
             {
                 __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLChartsheet.__Internal));
                 __ownsNativeInstance = true;
@@ -18828,7 +18308,6 @@ namespace OpenXLSX
             }
 
             public XLChartsheet(global::OpenXLSX.OpenXLSX.XLChartsheet other)
-                : this((void*) null)
             {
                 __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLChartsheet.__Internal));
                 __ownsNativeInstance = true;
@@ -18836,9 +18315,14 @@ namespace OpenXLSX
                 *((global::OpenXLSX.OpenXLSX.XLChartsheet.__Internal*) __Instance) = *((global::OpenXLSX.OpenXLSX.XLChartsheet.__Internal*) other.__Instance);
             }
 
+            public void Dispose()
+            {
+                Dispose(disposing: true, callNativeDtor : __ownsNativeInstance );
+            }
+
             partial void DisposePartial(bool disposing);
 
-            internal protected override void Dispose(bool disposing, bool callNativeDtor )
+            internal protected virtual void Dispose(bool disposing, bool callNativeDtor )
             {
                 if (__Instance == IntPtr.Zero)
                     return;
@@ -19520,6 +19004,144 @@ namespace OpenXLSX
         {
             Forward = 0,
             Reverse = 1
+        }
+    }
+
+    [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(__CallingConvention.Cdecl)]
+    public unsafe delegate void OnReadSheetData(ulong rowInfoCount, __IntPtr rowInfos, ulong cellTotalCount, __IntPtr CellsData);
+
+    public unsafe partial class SStrPosInfo : IDisposable
+    {
+        [StructLayout(LayoutKind.Sequential, Size = 8, Pack = 4)]
+        public partial struct __Internal
+        {
+            internal uint StrMemStartIndex;
+            internal uint StrMemLen;
+
+            [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0SStrPosInfo@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
+        }
+
+        public __IntPtr __Instance { get; protected set; }
+
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::OpenXLSX.SStrPosInfo> NativeToManagedMap =
+            new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::OpenXLSX.SStrPosInfo>();
+
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::OpenXLSX.SStrPosInfo managed)
+        {
+            NativeToManagedMap[native] = managed;
+        }
+
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::OpenXLSX.SStrPosInfo managed)
+        {
+    
+            return NativeToManagedMap.TryGetValue(native, out managed);
+        }
+
+        protected bool __ownsNativeInstance;
+
+        internal static SStrPosInfo __CreateInstance(__IntPtr native, bool skipVTables = false)
+        {
+            if (native == __IntPtr.Zero)
+                return null;
+            return new SStrPosInfo(native.ToPointer(), skipVTables);
+        }
+
+        internal static SStrPosInfo __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
+        {
+            if (native == __IntPtr.Zero)
+                return null;
+            if (__TryGetNativeToManagedMapping(native, out var managed))
+                return (SStrPosInfo)managed;
+            var result = __CreateInstance(native, skipVTables);
+            if (saveInstance)
+                __RecordNativeToManagedMapping(native, result);
+            return result;
+        }
+
+        internal static SStrPosInfo __CreateInstance(__Internal native, bool skipVTables = false)
+        {
+            return new SStrPosInfo(native, skipVTables);
+        }
+
+        private static void* __CopyValue(__Internal native)
+        {
+            var ret = Marshal.AllocHGlobal(sizeof(__Internal));
+            *(__Internal*) ret = native;
+            return ret.ToPointer();
+        }
+
+        private SStrPosInfo(__Internal native, bool skipVTables = false)
+            : this(__CopyValue(native), skipVTables)
+        {
+            __ownsNativeInstance = true;
+            __RecordNativeToManagedMapping(__Instance, this);
+        }
+
+        protected SStrPosInfo(void* native, bool skipVTables = false)
+        {
+            if (native == null)
+                return;
+            __Instance = new __IntPtr(native);
+        }
+
+        public SStrPosInfo()
+        {
+            __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.SStrPosInfo.__Internal));
+            __ownsNativeInstance = true;
+            __RecordNativeToManagedMapping(__Instance, this);
+        }
+
+        public SStrPosInfo(global::OpenXLSX.SStrPosInfo _0)
+        {
+            __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.SStrPosInfo.__Internal));
+            __ownsNativeInstance = true;
+            __RecordNativeToManagedMapping(__Instance, this);
+            *((global::OpenXLSX.SStrPosInfo.__Internal*) __Instance) = *((global::OpenXLSX.SStrPosInfo.__Internal*) _0.__Instance);
+        }
+
+        public void Dispose()
+        {
+            Dispose(disposing: true, callNativeDtor : __ownsNativeInstance );
+        }
+
+        partial void DisposePartial(bool disposing);
+
+        internal protected virtual void Dispose(bool disposing, bool callNativeDtor )
+        {
+            if (__Instance == IntPtr.Zero)
+                return;
+            NativeToManagedMap.TryRemove(__Instance, out _);
+            DisposePartial(disposing);
+            if (__ownsNativeInstance)
+                Marshal.FreeHGlobal(__Instance);
+            __Instance = IntPtr.Zero;
+        }
+
+        public uint StrMemStartIndex
+        {
+            get
+            {
+                return ((__Internal*)__Instance)->StrMemStartIndex;
+            }
+
+            set
+            {
+                ((__Internal*)__Instance)->StrMemStartIndex = value;
+            }
+        }
+
+        public uint StrMemLen
+        {
+            get
+            {
+                return ((__Internal*)__Instance)->StrMemLen;
+            }
+
+            set
+            {
+                ((__Internal*)__Instance)->StrMemLen = value;
+            }
         }
     }
 

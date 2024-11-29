@@ -22,7 +22,7 @@ public static class OpenSLSXWrapperEx
         return (XLValueType)cellData.ValueType;
     }
 
-    public static string StringV(this OpenXLSXCellData cellData,OpenXLSXWrapperSheetData sheetData )
+    public static string StringV(this OpenXLSXCellData cellData, OpenXLSXWrapperSheetData sheetData)
     {
         unsafe
         {
@@ -35,18 +35,30 @@ public static class OpenSLSXWrapperEx
 [StructLayout(LayoutKind.Explicit, Pack = 4, Size = 12)]
 public unsafe struct OpenXLSXCellData
 {
-    [FieldOffset(0)] public int ValueType;
-    [FieldOffset(4)] public bool boolV;
-    [FieldOffset(4)] public double floatV;
-    [FieldOffset(4)] public long IntV;
-    [FieldOffset(4)] public void* PU8Str;
+    [FieldOffset(0)]
+    public int ValueType;
+
+    [FieldOffset(4)]
+    public bool boolV;
+
+    [FieldOffset(4)]
+    public double floatV;
+
+    [FieldOffset(4)]
+    public long IntV;
+
+    [FieldOffset(4)]
+    public void* PU8Str;
 }
 
 [StructLayout(LayoutKind.Explicit)]
 public struct RowPosInfo
 {
-    [FieldOffset(0)] public int BeginIndex;
-    [FieldOffset(4)] public int RowCellCount;
+    [FieldOffset(0)]
+    public int BeginIndex;
+
+    [FieldOffset(4)]
+    public int RowCellCount;
 }
 
 public class OpenXLSXWrapperSheetData
@@ -91,11 +103,19 @@ public class OpenXLSXWrapperSheetData
             {
                 if (cellData.ValueType == 5) // XLValueType::String
                 {
-                    var str = Marshal.PtrToStringUni(new IntPtr(cellData.PU8Str)) ?? "";
-                    _dicAllStrs.Add((IntPtr)cellData.PU8Str, str);
-                    //
-                    // var str =   "";
-                    // _dicAllStrs.Add((IntPtr)cellData.PU8Str, str);
+                    try
+                    {
+                        var str3 = Marshal.PtrToStringUTF8(new IntPtr(cellData.PU8Str)) ?? "";
+                        var ret = _dicAllStrs.TryAdd((IntPtr)cellData.PU8Str, str3);
+                        if (!ret)
+                        {
+                            // Console.WriteLine($"repeat {ret} {str3}");
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
                 }
             }
 
@@ -103,9 +123,8 @@ public class OpenXLSXWrapperSheetData
         }
     }
 
-    
-    
-    public void IterateRows(int startRowNum,Action<int> onRow)
+
+    public void IterateRows(int startRowNum, Action<int> onRow)
     {
         for (int i = startRowNum; i <= _arrRowPosInfos.Length; i++)
         {
@@ -131,7 +150,7 @@ public class OpenXLSXWrapperSheetData
 
     public OpenXLSXCellData GetCell(int rowNum, int colNum)
     {
-        RowPosInfo rowPosInfo = GetRowCellPosInfo(rowNum);  
+        RowPosInfo rowPosInfo = GetRowCellPosInfo(rowNum);
         var colIndex = colNum - 1;
         var rowLen = rowPosInfo.RowCellCount;
         if (colIndex < 0 || colIndex >= rowLen)
@@ -139,7 +158,7 @@ public class OpenXLSXWrapperSheetData
             //throw new ArgumentOutOfRangeException($"colIndex:{colIndex} rowLen:{rowLen}");
             return new OpenXLSXCellData()
             {
-                ValueType =  (int)XLValueType.Empty,
+                ValueType = (int)XLValueType.Empty,
                 PU8Str = null,
             };
         }
@@ -182,10 +201,7 @@ public class OpenXLSXWrapper : IDisposable
         {
             var wkSheet = _xlWorkbook.Worksheet(sheetName);
             OpenXLSXWrapperSheetData openXlsxWrapperSheetData = null;
-            wkSheet.IterateAllCells((count, infos, totalCount, data) =>
-            {
-                openXlsxWrapperSheetData = new OpenXLSXWrapperSheetData(count, infos, totalCount, data);
-            });
+            wkSheet.IterateAllCells((count, infos, totalCount, data) => { openXlsxWrapperSheetData = new OpenXLSXWrapperSheetData(count, infos, totalCount, data); });
             var tpNew = (wkSheet, sheetData: openXlsxWrapperSheetData);
             _dicSheets.Add(sheetName, tpNew);
             return tpNew;

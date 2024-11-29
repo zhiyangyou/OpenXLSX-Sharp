@@ -167,42 +167,11 @@ bool operator<=(const class OpenXLSX::XLRow&, const class OpenXLSX::XLRow&);
 bool (*_93)(const class OpenXLSX::XLRow&, const class OpenXLSX::XLRow&) = &OpenXLSX::operator<=;
 bool operator>=(const class OpenXLSX::XLRow&, const class OpenXLSX::XLRow&);
 bool (*_94)(const class OpenXLSX::XLRow&, const class OpenXLSX::XLRow&) = &OpenXLSX::operator>=;
-template __declspec(dllexport) OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::XLSheetBase();
-extern "C" __declspec(dllexport) void c__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v_F_XLSheetBase____N_OpenXLSX_S_XLXmlData(void* __instance, OpenXLSX::XLXmlData* xmlData) { ::new (__instance) OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>(xmlData); }
-extern "C" __declspec(dllexport) void c__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLWorksheet_v_F__XLSheetBase(OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>*__instance) { __instance->~XLSheetBase(); }
-OpenXLSX::XLSheetBase<class OpenXLSX::XLWorksheet, void>& (OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::*_95)(OpenXLSX::XLSheetBase<class OpenXLSX::XLWorksheet, void>&&) = &OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::operator=;
-template __declspec(dllexport) OpenXLSX::XLSheetState OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::visibility() const;
-template __declspec(dllexport) void OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::setVisibility(OpenXLSX::XLSheetState);
-template __declspec(dllexport) OpenXLSX::XLColor OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::color() const;
-template __declspec(dllexport) void OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::setColor(const OpenXLSX::XLColor&);
-template __declspec(dllexport) unsigned short OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::index() const;
-template __declspec(dllexport) void OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::setIndex(unsigned short);
-template __declspec(dllexport) std::basic_string<char, std::char_traits<char>, std::allocator<char>> OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::name() const;
-template __declspec(dllexport) void OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::setName(const std::basic_string<char, std::char_traits<char>, std::allocator<char>>&);
-template __declspec(dllexport) bool OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::isSelected() const;
-template __declspec(dllexport) void OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::setSelected(bool);
-template __declspec(dllexport) bool OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::isActive() const;
-template __declspec(dllexport) bool OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::setActive();
-template __declspec(dllexport) void OpenXLSX::XLSheetBase<OpenXLSX::XLWorksheet, void>::clone(const std::basic_string<char, std::char_traits<char>, std::allocator<char>>&);
-template __declspec(dllexport) OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::XLSheetBase();
-extern "C" __declspec(dllexport) void c__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v_F_XLSheetBase____N_OpenXLSX_S_XLXmlData(void* __instance, OpenXLSX::XLXmlData* xmlData) { ::new (__instance) OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>(xmlData); }
-extern "C" __declspec(dllexport) void c__N_OpenXLSX_S_XLSheetBase____N_OpenXLSX_S_XLChartsheet_v_F__XLSheetBase(OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>*__instance) { __instance->~XLSheetBase(); }
-OpenXLSX::XLSheetBase<class OpenXLSX::XLChartsheet, void>& (OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::*_96)(OpenXLSX::XLSheetBase<class OpenXLSX::XLChartsheet, void>&&) = &OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::operator=;
-template __declspec(dllexport) OpenXLSX::XLSheetState OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::visibility() const;
-template __declspec(dllexport) void OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::setVisibility(OpenXLSX::XLSheetState);
-template __declspec(dllexport) OpenXLSX::XLColor OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::color() const;
-template __declspec(dllexport) void OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::setColor(const OpenXLSX::XLColor&);
-template __declspec(dllexport) unsigned short OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::index() const;
-template __declspec(dllexport) void OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::setIndex(unsigned short);
-template __declspec(dllexport) std::basic_string<char, std::char_traits<char>, std::allocator<char>> OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::name() const;
-template __declspec(dllexport) void OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::setName(const std::basic_string<char, std::char_traits<char>, std::allocator<char>>&);
-template __declspec(dllexport) bool OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::isSelected() const;
-template __declspec(dllexport) void OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::setSelected(bool);
-template __declspec(dllexport) void OpenXLSX::XLSheetBase<OpenXLSX::XLChartsheet, void>::clone(const std::basic_string<char, std::char_traits<char>, std::allocator<char>>&);
 extern "C" __declspec(dllexport) void c__N_OpenXLSX_S_XLWorksheet_XLWorksheet(void* __instance) { ::new (__instance) OpenXLSX::XLWorksheet(); }
 extern "C" __declspec(dllexport) void c__N_OpenXLSX_S_XLChartsheet_XLChartsheet(void* __instance) { ::new (__instance) OpenXLSX::XLChartsheet(); }
 extern "C" __declspec(dllexport) void c__N_OpenXLSX_S_XLMergeCells_XLMergeCells(void* __instance) { ::new (__instance) OpenXLSX::XLMergeCells(); }
 extern "C" __declspec(dllexport) void c__N_OpenXLSX_S_XLMergeCells_XLMergeCells___1__N_OpenXLSX_S_XLMergeCells(void* __instance, const OpenXLSX::XLMergeCells& other) { ::new (__instance) OpenXLSX::XLMergeCells(other); }
-class OpenXLSX::XLMergeCells& (OpenXLSX::XLMergeCells::*_97)(class OpenXLSX::XLMergeCells&&) = &OpenXLSX::XLMergeCells::operator=;
-bool (OpenXLSX::XLMergeCells::*_98)() const = &OpenXLSX::XLMergeCells::uninitialized;
-const char* (OpenXLSX::XLMergeCells::*_99)(int) const = &OpenXLSX::XLMergeCells::operator[];
+class OpenXLSX::XLMergeCells& (OpenXLSX::XLMergeCells::*_95)(class OpenXLSX::XLMergeCells&&) = &OpenXLSX::XLMergeCells::operator=;
+bool (OpenXLSX::XLMergeCells::*_96)() const = &OpenXLSX::XLMergeCells::uninitialized;
+const char* (OpenXLSX::XLMergeCells::*_97)(int) const = &OpenXLSX::XLMergeCells::operator[];
+struct SStrPosInfo& (SStrPosInfo::*_98)(struct SStrPosInfo&&) = &SStrPosInfo::operator=;

@@ -17,7 +17,7 @@ class Program
 
         List<(string, string)> listExcels = new List<(string, string)>()
         {
-            ("D:\\temp\\test2.xlsx", "testSheet"),
+            ("F:\\temp\\test2.xlsx", "testSheet"),
         };
 
         foreach (var tpExcelSheet in listExcels)
@@ -62,13 +62,13 @@ class Program
                     }
                 }
 
-                sbAllCellStrings.AppendLine("");
+                // sbAllCellStrings.AppendLine("");
             }
 
             swIterate.Stop();
             var iterateCostTime = swIterate.ElapsedMilliseconds;
 
-            Console.WriteLine($"sbAllCellStrings.ToString().Length {sbAllCellStrings.ToString()}");
+            // Console.WriteLine($"sbAllCellStrings.ToString().Length {sbAllCellStrings.ToString()}");
             Console.WriteLine($"sbAllCellStrings.ToString().Length {sbAllCellStrings.ToString().Length}");
             Console.WriteLine($"iterate datas CostTime = {iterateCostTime}ms");
             Console.WriteLine($"read full excel cost {costReadFullTime}ms");
