@@ -40,6 +40,7 @@ class Program
             {
                 var rowInfo = sheetData.GetRowCellPosInfo(rowNum);
                 var cellCount = rowInfo.RowCellCount;
+                sbAllCellStrings.Append($"row:{rowNum} ");
                 for (int colNum = 1; colNum <= cellCount; colNum++)
                 {
                     var cell = sheetData.GetCell(rowNum, colNum);
@@ -48,10 +49,13 @@ class Program
                         unsafe
                         {
                             sbAllCellStrings.Append(sheetData.GetCellString(cell.PU8Str));
-                            sbAllCellStrings.Append("|");
                         }
                     }
-
+                    else if (cell.ValueType == (int)XLValueType.Empty)
+                    {
+                        sbAllCellStrings.Append("[empty]");
+                    }
+                    sbAllCellStrings.Append("|");
                     if (!_dicCellTypeCounter.ContainsKey(cell.ValueType))
                     {
                         _dicCellTypeCounter[cell.ValueType] = 1;
@@ -62,13 +66,13 @@ class Program
                     }
                 }
 
-                // sbAllCellStrings.AppendLine("");
+                sbAllCellStrings.AppendLine("");
             }
 
             swIterate.Stop();
             var iterateCostTime = swIterate.ElapsedMilliseconds;
 
-            // Console.WriteLine($"sbAllCellStrings.ToString().Length {sbAllCellStrings.ToString()}");
+            Console.WriteLine($"sbAllCellStrings.ToString().Length {sbAllCellStrings.ToString()}");
             Console.WriteLine($"sbAllCellStrings.ToString().Length {sbAllCellStrings.ToString().Length}");
             Console.WriteLine($"iterate datas CostTime = {iterateCostTime}ms");
             Console.WriteLine($"read full excel cost {costReadFullTime}ms");
