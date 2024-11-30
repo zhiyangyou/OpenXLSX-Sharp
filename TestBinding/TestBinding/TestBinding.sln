@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBinding", "TestBinding\TestBinding.csproj", "{21419532-A5F9-4626-8164-B7B0125737B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{DB3E6909-F6AE-4F83-88E5-142C8030B449}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,14 @@ Global
 		{21419532-A5F9-4626-8164-B7B0125737B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{21419532-A5F9-4626-8164-B7B0125737B5}.Release|x64.ActiveCfg = Release|x64
 		{21419532-A5F9-4626-8164-B7B0125737B5}.Release|x64.Build.0 = Release|x64
+		{DB3E6909-F6AE-4F83-88E5-142C8030B449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB3E6909-F6AE-4F83-88E5-142C8030B449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB3E6909-F6AE-4F83-88E5-142C8030B449}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DB3E6909-F6AE-4F83-88E5-142C8030B449}.Debug|x64.Build.0 = Debug|Any CPU
+		{DB3E6909-F6AE-4F83-88E5-142C8030B449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB3E6909-F6AE-4F83-88E5-142C8030B449}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB3E6909-F6AE-4F83-88E5-142C8030B449}.Release|x64.ActiveCfg = Release|Any CPU
+		{DB3E6909-F6AE-4F83-88E5-142C8030B449}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

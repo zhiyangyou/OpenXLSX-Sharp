@@ -124,6 +124,15 @@ public class OpenXLSXWrapperSheetData
     }
 
 
+    public void IterateRows(int startRowNum, int endRowNum, Action<int> onRow)
+    {
+        var num = endRowNum < _arrRowPosInfos.Length ? endRowNum : _arrRowPosInfos.Length;
+        for (int i = startRowNum; i <= num; i++)
+        {
+            onRow.Invoke(i);
+        }
+    }
+
     public void IterateRows(int startRowNum, Action<int> onRow)
     {
         for (int i = startRowNum; i <= _arrRowPosInfos.Length; i++)
@@ -191,6 +200,19 @@ public class OpenXLSXWrapper : IDisposable
     }
 
 
+    public List<string> GetAllSheetNames()
+    {
+        var sheetCount = _xlWorkbook.SheetCount;
+        var list = new List<string>();
+        for (ushort i = 1; i <= sheetCount; i++)
+        {
+            XLSheet sheet = _xlWorkbook.Sheet(i);
+            list.Add(sheet.Name);
+            sheet.Dispose();
+        }
+        return list;
+    }
+
     public (XLWorksheet, OpenXLSXWrapperSheetData) GetSheetTP(string sheetName)
     {
         if (_dicSheets.TryGetValue(sheetName, out var tp))
@@ -199,6 +221,10 @@ public class OpenXLSXWrapper : IDisposable
         }
         else
         {
+            if (!_xlWorkbook.SheetExists(sheetName))
+            {
+                throw new Exception($"sheet 不存在,name: {sheetName}");
+            }
             var wkSheet = _xlWorkbook.Worksheet(sheetName);
             OpenXLSXWrapperSheetData openXlsxWrapperSheetData = null;
             wkSheet.IterateAllCells((count, infos, totalCount, data) => { openXlsxWrapperSheetData = new OpenXLSXWrapperSheetData(count, infos, totalCount, data); });

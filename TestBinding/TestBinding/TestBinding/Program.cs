@@ -14,12 +14,16 @@ class Program
             Console.WriteLine($"OpenXLSXCellData {sizeof(OpenXLSXCellData)}");
             Console.WriteLine($"RowPosInfo {sizeof(RowPosInfo)}");
         }
-
         List<(string, string)> listExcels = new List<(string, string)>()
         {
             ("F:\\temp\\test2.xlsx", "testSheet"),
         };
 
+        TestExcel2(listExcels);
+    }
+
+    static void TestExcel2(List<(string, string)> listExcels)
+    {
         foreach (var tpExcelSheet in listExcels)
         {
             var sw = new Stopwatch();
