@@ -2,3 +2,7 @@
 	path = OpenXLSX
 	url = git@github.com:zhiyangyou/OpenXLSX.git
 	branch = master
+[submodule "mimalloc"]
+	path = mimalloc
+	url = https://github.com/zhiyangyou/mimalloc.git
+	branch = master
