@@ -6,3 +6,9 @@
 	path = mimalloc
 	url = git@github.com:zhiyangyou/mimalloc.git
 	branch = master
+[submodule "OpenXLSX/OpenXLSX/external/libdeflate"]
+	path = OpenXLSX/OpenXLSX/external/libdeflate
+	url = https://github.com/ebiggers/libdeflate.git
+[submodule "mio"]
+	path = mio
+	url = https://github.com/vimpunk/mio.git
