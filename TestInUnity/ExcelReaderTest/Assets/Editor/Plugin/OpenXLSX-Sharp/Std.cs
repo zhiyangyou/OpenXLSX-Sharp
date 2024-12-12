@@ -17,6 +17,20 @@ using __IntPtr = global::System.IntPtr;
 
 namespace Std
 {
+}
+
+public unsafe partial class StdExceptionData
+{
+    [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
+    public partial struct __Internal
+    {
+        internal __IntPtr _What;
+        internal byte _DoFree;
+    }
+}
+
+namespace Std
+{
     namespace BasicString
     {
         [StructLayout(LayoutKind.Sequential, Size = 32, Pack = 8)]
@@ -319,6 +333,12 @@ namespace Std
             internal global::Std.DequeVal.__Internal _Myval2;
         }
 
+        [StructLayout(LayoutKind.Sequential, Size = 24, Pack = 8)]
+        public unsafe partial struct __Internalc__N_std_S__Compressed_pair____N_std_S_allocator__k___N_std_S__Vector_val____N_std_S__Simple_types__k_Vb1
+        {
+            internal global::Std.VectorVal.__Internal _Myval2;
+        }
+
         [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
         public unsafe partial struct __Internalc__N_std_S__Compressed_pair____N_std_S_less____N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C___N_std_S__Compressed_pair____N_std_S_allocator____N_std_S__Tree_node____N_std_S_pair__1S1____N_std_S_any__v___N_std_S__Tree_val____N_std_S__Tree_simple_types__S7__Vb1_Vb1
         {
@@ -450,20 +470,6 @@ namespace Std
     }
 }
 
-public unsafe partial class StdExceptionData
-{
-    [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
-    public partial struct __Internal
-    {
-        internal __IntPtr _What;
-        internal byte _DoFree;
-    }
-}
-
-namespace Std
-{
-}
-
 namespace Std
 {
     namespace SharedPtr
@@ -508,32 +514,30 @@ namespace Std
 
 namespace Std
 {
-    namespace ListVal
+    namespace Vector
     {
-        [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
+        [StructLayout(LayoutKind.Sequential, Size = 24, Pack = 8)]
+        public unsafe partial struct __Internalc__N_std_S_vector__k___N_std_S_allocator__k
+        {
+            internal global::Std.CompressedPair.__Internalc__N_std_S__Compressed_pair____N_std_S_allocator__k___N_std_S__Vector_val____N_std_S__Simple_types__k_Vb1 _Mypair;
+        }
+    }
+
+    namespace VectorVal
+    {
+        [StructLayout(LayoutKind.Sequential, Size = 24, Pack = 8)]
         public unsafe partial struct __Internal
         {
-            internal __IntPtr _Myhead;
-            internal ulong _Mysize;
+            internal __IntPtr _Myfirst;
+            internal __IntPtr _Mylast;
+            internal __IntPtr _Myend;
         }
     }
 }
 
 namespace Std
 {
-    namespace Map
-    {
-        [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
-        public unsafe partial struct __Internalc__N_std_S_map____N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C___N_std_S_any___N_std_S_less__S0____N_std_S_allocator____N_std_S_pair__1S0__S3_
-        {
-            internal global::Std.CompressedPair.__Internalc__N_std_S__Compressed_pair____N_std_S_less____N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C___N_std_S__Compressed_pair____N_std_S_allocator____N_std_S__Tree_node____N_std_S_pair__1S1____N_std_S_any__v___N_std_S__Tree_val____N_std_S__Tree_simple_types__S7__Vb1_Vb1 _Mypair;
-        }
-    }
-}
-
-namespace Std
-{
-    namespace TreeVal
+    namespace ListVal
     {
         [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
         public unsafe partial struct __Internal
@@ -618,4 +622,25 @@ namespace Std
 
 namespace Std
 {
+    namespace Map
+    {
+        [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
+        public unsafe partial struct __Internalc__N_std_S_map____N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C___N_std_S_any___N_std_S_less__S0____N_std_S_allocator____N_std_S_pair__1S0__S3_
+        {
+            internal global::Std.CompressedPair.__Internalc__N_std_S__Compressed_pair____N_std_S_less____N_std_S_basic_string__C___N_std_S_char_traits__C___N_std_S_allocator__C___N_std_S__Compressed_pair____N_std_S_allocator____N_std_S__Tree_node____N_std_S_pair__1S1____N_std_S_any__v___N_std_S__Tree_val____N_std_S__Tree_simple_types__S7__Vb1_Vb1 _Mypair;
+        }
+    }
+}
+
+namespace Std
+{
+    namespace TreeVal
+    {
+        [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 8)]
+        public unsafe partial struct __Internal
+        {
+            internal __IntPtr _Myhead;
+            internal ulong _Mysize;
+        }
+    }
 }

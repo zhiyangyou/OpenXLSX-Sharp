@@ -119,7 +119,7 @@ public class OpenXLSXWrapperSheetData
                 }
             }
 
-            Console.WriteLine($"convertU8Str _dicAllStrs {_dicAllStrs.Count} cost {sw.ElapsedTicks}   ticks");
+            // Console.WriteLine($"convertU8Str _dicAllStrs {_dicAllStrs.Count} cost {sw.ElapsedTicks}   ticks");
         }
     }
 
@@ -188,13 +188,14 @@ public class OpenXLSXWrapper : IDisposable
     private XLDocument _doc = null;
     private XLWorkbook _xlWorkbook = null;
     private Dictionary<string, (XLWorksheet, OpenXLSXWrapperSheetData)> _dicSheets = new();
+    private Dictionary<int, (XLWorksheet, OpenXLSXWrapperSheetData)> _dicSheetsInt = new();
 
     private bool _hasDispose = false;
 
-    public OpenXLSXWrapper(string excelPath)
+    public OpenXLSXWrapper(string excelPath, bool useZYUnZipper)
     {
         _hasDispose = false;
-        _doc = new XLDocument();
+        _doc = new XLDocument(useZYUnZipper);
         _doc.Open(excelPath);
         _xlWorkbook = _doc.Workbook;
     }
@@ -213,6 +214,11 @@ public class OpenXLSXWrapper : IDisposable
         return list;
     }
 
+    public uint GetSheetCount()
+    {
+        return _xlWorkbook.SheetCount;
+    }
+
     public (XLWorksheet, OpenXLSXWrapperSheetData) GetSheetTP(string sheetName)
     {
         if (_dicSheets.TryGetValue(sheetName, out var tp))
@@ -225,11 +231,34 @@ public class OpenXLSXWrapper : IDisposable
             {
                 throw new Exception($"sheet 不存在,name: {sheetName}");
             }
+            // var wkSheet = _xlWorkbook.Worksheet(sheetName);
             var wkSheet = _xlWorkbook.Worksheet(sheetName);
             OpenXLSXWrapperSheetData openXlsxWrapperSheetData = null;
             wkSheet.IterateAllCells((count, infos, totalCount, data) => { openXlsxWrapperSheetData = new OpenXLSXWrapperSheetData(count, infos, totalCount, data); });
             var tpNew = (wkSheet, sheetData: openXlsxWrapperSheetData);
             _dicSheets.Add(sheetName, tpNew);
+            return tpNew;
+        }
+    }
+
+    public (XLWorksheet, OpenXLSXWrapperSheetData) GetSheetTP(int index)
+    {
+        ushort sheetIndex = (ushort)index;
+        if (_dicSheetsInt.TryGetValue(sheetIndex, out var tp))
+        {
+            return tp;
+        }
+        else
+        {
+            if (sheetIndex > _xlWorkbook.SheetCount)
+            {
+                throw new Exception($"sheet 不存在,name: {sheetIndex}");
+            }
+            var wkSheet = _xlWorkbook.Worksheet(sheetIndex);
+            OpenXLSXWrapperSheetData openXlsxWrapperSheetData = null;
+            wkSheet.IterateAllCells((count, infos, totalCount, data) => { openXlsxWrapperSheetData = new OpenXLSXWrapperSheetData(count, infos, totalCount, data); });
+            var tpNew = (wkSheet, sheetData: openXlsxWrapperSheetData);
+            _dicSheetsInt.Add(index, tpNew);
             return tpNew;
         }
     }
@@ -248,7 +277,10 @@ public class OpenXLSXWrapper : IDisposable
             {
                 kv.Value.Item1.Dispose();
             }
-
+            foreach (var kv in _dicSheetsInt)
+            {
+                kv.Value.Item1.Dispose();
+            }
             _doc.Close();
             _doc.Dispose();
         }

@@ -1689,6 +1689,15 @@ namespace OpenXLSX
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??BXLCellValueProxy@OpenXLSX@@QEBA?AVXLCellValue@1@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void OperatorConversion(__IntPtr __instance, __IntPtr @return);
 
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?getType@XLCellValueProxy@OpenXLSX@@SA?AW4XLValueType@2@AEBVOpenXLSX_xml_node@2@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern global::OpenXLSX.OpenXLSX.XLValueType GetType(__IntPtr xmlNode);
+
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?getValue@XLCellValueProxy@OpenXLSX@@SA?AVXLCellValue@2@AEBVOpenXLSX_xml_node@2@W4XLValueType@2@AEBVXLSharedStrings@2@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern void GetValue(__IntPtr @return, __IntPtr xmlNode, global::OpenXLSX.OpenXLSX.XLValueType type, __IntPtr shared_strings);
+
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?getStringValue@XLCellValueProxy@OpenXLSX@@SAPEBDAEBVOpenXLSX_xml_node@2@AEBVXLSharedStrings@2@@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern __IntPtr GetStringValue(__IntPtr xmlNode, __IntPtr shared_strings);
+
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?clear@XLCellValueProxy@OpenXLSX@@QEAAAEAV12@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr Clear(__IntPtr __instance);
 
@@ -1810,6 +1819,42 @@ namespace OpenXLSX
                 var _____ret = global::OpenXLSX.OpenXLSX.XLCellValue.__CreateInstance(___ret);
                 global::OpenXLSX.OpenXLSX.XLCellValue.__Internal.dtor(new __IntPtr(&___ret));
                 return _____ret;
+            }
+
+            public static global::OpenXLSX.OpenXLSX.XLValueType GetType(global::OpenXLSX.OpenXLSX.OpenXLSX_xml_node xmlNode)
+            {
+                if (ReferenceEquals(xmlNode, null))
+                    throw new global::System.ArgumentNullException("xmlNode", "Cannot be null because it is a C++ reference (&).");
+                var __arg0 = xmlNode.__Instance;
+                var ___ret = __Internal.GetType(__arg0);
+                return ___ret;
+            }
+
+            public static global::OpenXLSX.OpenXLSX.XLCellValue GetValue(global::OpenXLSX.OpenXLSX.OpenXLSX_xml_node xmlNode, global::OpenXLSX.OpenXLSX.XLValueType type, global::OpenXLSX.OpenXLSX.XLSharedStrings shared_strings)
+            {
+                if (ReferenceEquals(xmlNode, null))
+                    throw new global::System.ArgumentNullException("xmlNode", "Cannot be null because it is a C++ reference (&).");
+                var __arg0 = xmlNode.__Instance;
+                if (ReferenceEquals(shared_strings, null))
+                    throw new global::System.ArgumentNullException("shared_strings", "Cannot be null because it is a C++ reference (&).");
+                var __arg2 = shared_strings.__Instance;
+                var ___ret = new global::OpenXLSX.OpenXLSX.XLCellValue.__Internal();
+                __Internal.GetValue(new IntPtr(&___ret), __arg0, type, __arg2);
+                var _____ret = global::OpenXLSX.OpenXLSX.XLCellValue.__CreateInstance(___ret);
+                global::OpenXLSX.OpenXLSX.XLCellValue.__Internal.dtor(new __IntPtr(&___ret));
+                return _____ret;
+            }
+
+            public static string GetStringValue(global::OpenXLSX.OpenXLSX.OpenXLSX_xml_node xmlNode, global::OpenXLSX.OpenXLSX.XLSharedStrings shared_strings)
+            {
+                if (ReferenceEquals(xmlNode, null))
+                    throw new global::System.ArgumentNullException("xmlNode", "Cannot be null because it is a C++ reference (&).");
+                var __arg0 = xmlNode.__Instance;
+                if (ReferenceEquals(shared_strings, null))
+                    throw new global::System.ArgumentNullException("shared_strings", "Cannot be null because it is a C++ reference (&).");
+                var __arg1 = shared_strings.__Instance;
+                var ___ret = __Internal.GetStringValue(__arg0, __arg1);
+                return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
             }
 
             /// <summary>Clear the contents of the cell.</summary>
@@ -12573,6 +12618,9 @@ namespace OpenXLSX
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0XLDocument@OpenXLSX@@QEAA@XZ", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr ctor(__IntPtr __instance);
 
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0XLDocument@OpenXLSX@@QEAA@_N@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern __IntPtr ctor(__IntPtr __instance, bool useZyUnZipper);
+
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0XLDocument@OpenXLSX@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVIZipArchive@1@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr ctor(__IntPtr __instance, __IntPtr docPath, __IntPtr zipArchive);
 
@@ -12631,6 +12679,9 @@ namespace OpenXLSX
 
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?extractXmlFromArchive@XLDocument@OpenXLSX@@IEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void ExtractXmlFromArchive(__IntPtr __instance, __IntPtr @return, __IntPtr path);
+
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?extractXmlFromArchiveRefRawChar@XLDocument@OpenXLSX@@IEAAPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAI@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern __IntPtr ExtractXmlFromArchiveRefRawChar(__IntPtr __instance, __IntPtr path, uint* u8Len);
 
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?getXmlData@XLDocument@OpenXLSX@@IEAAPEAVXLXmlData@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern __IntPtr GetXmlData(__IntPtr __instance, __IntPtr path);
@@ -12726,6 +12777,14 @@ namespace OpenXLSX
                 __ownsNativeInstance = true;
                 __RecordNativeToManagedMapping(__Instance, this);
                 __Internal.ctor(__Instance);
+            }
+
+            public XLDocument(bool useZyUnZipper)
+            {
+                __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.OpenXLSX.XLDocument.__Internal));
+                __ownsNativeInstance = true;
+                __RecordNativeToManagedMapping(__Instance, this);
+                __Internal.ctor(__Instance, useZyUnZipper);
             }
 
             /// <summary>Constructor. An alternative constructor, taking the path to the .xlsx file as an argument.</summary>
@@ -12956,6 +13015,20 @@ namespace OpenXLSX
                 return __retString0;
             }
 
+            protected string ExtractXmlFromArchiveRefRawChar(string path, ref uint u8Len)
+            {
+                var __basicString0 = new global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>();
+                global::Std.BasicStringExtensions.Assign(__basicString0, path);
+                var __arg0 = __basicString0.__Instance;
+                fixed (uint* __u8Len1 = &u8Len)
+                {
+                    var __arg1 = __u8Len1;
+                    var ___ret = __Internal.ExtractXmlFromArchiveRefRawChar(__Instance, __arg0, __arg1);
+                    __basicString0.Dispose();
+                    return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
+                }
+            }
+
             protected global::OpenXLSX.OpenXLSX.XLXmlData GetXmlData(string path)
             {
                 var __basicString0 = new global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>();
@@ -12975,6 +13048,11 @@ namespace OpenXLSX
                 var ___ret = __Internal.HasXmlData(__Instance, __arg0);
                 __basicString0.Dispose();
                 return ___ret;
+            }
+
+            public static explicit operator global::OpenXLSX.OpenXLSX.XLDocument(bool useZyUnZipper)
+            {
+                return new global::OpenXLSX.OpenXLSX.XLDocument(useZyUnZipper);
             }
 
             /// <summary>Get the filename of the current document, e.g. &quot;spreadsheet.xlsx&quot;.</summary>
@@ -13102,6 +13180,9 @@ namespace OpenXLSX
 
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?getEntry@IZipArchive@OpenXLSX@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetEntry(__IntPtr __instance, __IntPtr @return, __IntPtr name);
+
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?getEntry@IZipArchive@OpenXLSX@@QEAAPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAI@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern __IntPtr GetEntry(__IntPtr __instance, __IntPtr name, uint* u8Len);
 
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?hasEntry@IZipArchive@OpenXLSX@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
@@ -13286,6 +13367,20 @@ namespace OpenXLSX
                 var __retString0 = global::Std.BasicStringExtensions.Data(__basicStringRet0);
                 __basicStringRet0.Dispose();
                 return __retString0;
+            }
+
+            public string GetEntry(string name, ref uint u8Len)
+            {
+                var __basicString0 = new global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>();
+                global::Std.BasicStringExtensions.Assign(__basicString0, name);
+                var __arg0 = __basicString0.__Instance;
+                fixed (uint* __u8Len1 = &u8Len)
+                {
+                    var __arg1 = __u8Len1;
+                    var ___ret = __Internal.GetEntry(__Instance, __arg0, __arg1);
+                    __basicString0.Dispose();
+                    return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
+                }
             }
 
             public bool HasEntry(string entryName)
@@ -16026,6 +16121,9 @@ namespace OpenXLSX
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?getEntry@XLZipArchive@OpenXLSX@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 internal static extern void GetEntry(__IntPtr __instance, __IntPtr @return, __IntPtr name);
 
+                [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?getEntry@XLZipArchive@OpenXLSX@@QEAAPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAI@Z", CallingConvention = __CallingConvention.Cdecl)]
+                internal static extern __IntPtr GetEntry(__IntPtr __instance, __IntPtr name, uint* u8Len);
+
                 [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?hasEntry@XLZipArchive@OpenXLSX@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", CallingConvention = __CallingConvention.Cdecl)]
                 [return: MarshalAs(UnmanagedType.I1)]
                 internal static extern bool HasEntry(__IntPtr __instance, __IntPtr entryName);
@@ -16207,6 +16305,20 @@ namespace OpenXLSX
                 var __retString0 = global::Std.BasicStringExtensions.Data(__basicStringRet0);
                 __basicStringRet0.Dispose();
                 return __retString0;
+            }
+
+            public string GetEntry(string name, ref uint u8Len)
+            {
+                var __basicString0 = new global::Std.BasicString<sbyte, global::Std.CharTraits<sbyte>, global::Std.Allocator<sbyte>>();
+                global::Std.BasicStringExtensions.Assign(__basicString0, name);
+                var __arg0 = __basicString0.__Instance;
+                fixed (uint* __u8Len1 = &u8Len)
+                {
+                    var __arg1 = __u8Len1;
+                    var ___ret = __Internal.GetEntry(__Instance, __arg0, __arg1);
+                    __basicString0.Dispose();
+                    return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
+                }
             }
 
             public bool HasEntry(string entryName)
@@ -19010,138 +19122,17 @@ namespace OpenXLSX
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(__CallingConvention.Cdecl)]
     public unsafe delegate void OnReadSheetData(ulong rowInfoCount, __IntPtr rowInfos, ulong cellTotalCount, __IntPtr CellsData);
 
-    public unsafe partial class SStrPosInfo : IDisposable
+    public unsafe partial class ExtensionForSharp
     {
-        [StructLayout(LayoutKind.Sequential, Size = 8, Pack = 4)]
         public partial struct __Internal
         {
-            internal uint StrMemStartIndex;
-            internal uint StrMemLen;
-
-            [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "??0SStrPosInfo@@QEAA@AEBU0@@Z", CallingConvention = __CallingConvention.Cdecl)]
-            internal static extern __IntPtr cctor(__IntPtr __instance, __IntPtr _0);
+            [SuppressUnmanagedCodeSecurity, DllImport("OpenXLSX", EntryPoint = "?init_mimalloc_to_pugi@@YAXXZ", CallingConvention = __CallingConvention.Cdecl)]
+            internal static extern void InitMimallocToPugi();
         }
 
-        public __IntPtr __Instance { get; protected set; }
-
-        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::OpenXLSX.SStrPosInfo> NativeToManagedMap =
-            new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::OpenXLSX.SStrPosInfo>();
-
-        internal static void __RecordNativeToManagedMapping(IntPtr native, global::OpenXLSX.SStrPosInfo managed)
+        public static void InitMimallocToPugi()
         {
-            NativeToManagedMap[native] = managed;
-        }
-
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::OpenXLSX.SStrPosInfo managed)
-        {
-    
-            return NativeToManagedMap.TryGetValue(native, out managed);
-        }
-
-        protected bool __ownsNativeInstance;
-
-        internal static SStrPosInfo __CreateInstance(__IntPtr native, bool skipVTables = false)
-        {
-            if (native == __IntPtr.Zero)
-                return null;
-            return new SStrPosInfo(native.ToPointer(), skipVTables);
-        }
-
-        internal static SStrPosInfo __GetOrCreateInstance(__IntPtr native, bool saveInstance = false, bool skipVTables = false)
-        {
-            if (native == __IntPtr.Zero)
-                return null;
-            if (__TryGetNativeToManagedMapping(native, out var managed))
-                return (SStrPosInfo)managed;
-            var result = __CreateInstance(native, skipVTables);
-            if (saveInstance)
-                __RecordNativeToManagedMapping(native, result);
-            return result;
-        }
-
-        internal static SStrPosInfo __CreateInstance(__Internal native, bool skipVTables = false)
-        {
-            return new SStrPosInfo(native, skipVTables);
-        }
-
-        private static void* __CopyValue(__Internal native)
-        {
-            var ret = Marshal.AllocHGlobal(sizeof(__Internal));
-            *(__Internal*) ret = native;
-            return ret.ToPointer();
-        }
-
-        private SStrPosInfo(__Internal native, bool skipVTables = false)
-            : this(__CopyValue(native), skipVTables)
-        {
-            __ownsNativeInstance = true;
-            __RecordNativeToManagedMapping(__Instance, this);
-        }
-
-        protected SStrPosInfo(void* native, bool skipVTables = false)
-        {
-            if (native == null)
-                return;
-            __Instance = new __IntPtr(native);
-        }
-
-        public SStrPosInfo()
-        {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.SStrPosInfo.__Internal));
-            __ownsNativeInstance = true;
-            __RecordNativeToManagedMapping(__Instance, this);
-        }
-
-        public SStrPosInfo(global::OpenXLSX.SStrPosInfo _0)
-        {
-            __Instance = Marshal.AllocHGlobal(sizeof(global::OpenXLSX.SStrPosInfo.__Internal));
-            __ownsNativeInstance = true;
-            __RecordNativeToManagedMapping(__Instance, this);
-            *((global::OpenXLSX.SStrPosInfo.__Internal*) __Instance) = *((global::OpenXLSX.SStrPosInfo.__Internal*) _0.__Instance);
-        }
-
-        public void Dispose()
-        {
-            Dispose(disposing: true, callNativeDtor : __ownsNativeInstance );
-        }
-
-        partial void DisposePartial(bool disposing);
-
-        internal protected virtual void Dispose(bool disposing, bool callNativeDtor )
-        {
-            if (__Instance == IntPtr.Zero)
-                return;
-            NativeToManagedMap.TryRemove(__Instance, out _);
-            DisposePartial(disposing);
-            if (__ownsNativeInstance)
-                Marshal.FreeHGlobal(__Instance);
-            __Instance = IntPtr.Zero;
-        }
-
-        public uint StrMemStartIndex
-        {
-            get
-            {
-                return ((__Internal*)__Instance)->StrMemStartIndex;
-            }
-
-            set
-            {
-                ((__Internal*)__Instance)->StrMemStartIndex = value;
-            }
-        }
-
-        public uint StrMemLen
-        {
-            get
-            {
-                return ((__Internal*)__Instance)->StrMemLen;
-            }
-
-            set
-            {
-                ((__Internal*)__Instance)->StrMemLen = value;
-            }
+            __Internal.InitMimallocToPugi();
         }
     }
 

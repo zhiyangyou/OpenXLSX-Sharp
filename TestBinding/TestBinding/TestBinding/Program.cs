@@ -2,6 +2,7 @@
 
 using System.Diagnostics;
 using System.Text;
+using M11.Editor;
 using OpenXLSX.OpenXLSX;
 
 
@@ -14,6 +15,11 @@ class Program
             Console.WriteLine($"OpenXLSXCellData {sizeof(OpenXLSXCellData)}");
             Console.WriteLine($"RowPosInfo {sizeof(RowPosInfo)}");
         }
+        Test2();
+    }
+
+    static void Test1()
+    {
         List<(string, string)> listExcels = new List<(string, string)>()
         {
             ("F:\\temp\\test2.xlsx", "testSheet"),
@@ -22,13 +28,18 @@ class Program
         TestExcel2(listExcels);
     }
 
+    static void Test2()
+    {
+        ImportI18NTexts.TestReadAllI18N();
+    }
+
     static void TestExcel2(List<(string, string)> listExcels)
     {
         foreach (var tpExcelSheet in listExcels)
         {
             var sw = new Stopwatch();
             sw.Start();
-            OpenXLSXWrapper openXlsxWrapper = new OpenXLSXWrapper(tpExcelSheet.Item1);
+            OpenXLSXWrapper openXlsxWrapper = new OpenXLSXWrapper(tpExcelSheet.Item1, true);
             var tp = openXlsxWrapper.GetSheetTP(tpExcelSheet.Item2);
             sw.Stop();
             var costReadFullTime = sw.ElapsedMilliseconds;
@@ -76,9 +87,10 @@ class Program
             swIterate.Stop();
             var iterateCostTime = swIterate.ElapsedMilliseconds;
 
-            Console.WriteLine($"sbAllCellStrings.ToString().Length {sbAllCellStrings.ToString()}");
+            // Console.WriteLine($"sbAllCellStrings.ToString().Length {sbAllCellStrings.ToString()}");
             Console.WriteLine($"sbAllCellStrings.ToString().Length {sbAllCellStrings.ToString().Length}");
             Console.WriteLine($"iterate datas CostTime = {iterateCostTime}ms");
+
             Console.WriteLine($"read full excel cost {costReadFullTime}ms");
         }
     }
