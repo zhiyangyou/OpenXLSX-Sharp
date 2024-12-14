@@ -9,7 +9,7 @@ namespace M11.Editor
         public static void TestReadAllI18N()
         {
             // Debug.LogError("测试读取所有i18n列");
-            var listAllExcelFilePaths = new DirectoryInfo("F:\\temp\\testAllExcels").EnumerateFiles("*.xlsx");
+            var listAllExcelFilePaths = new DirectoryInfo("F:\\temp\\testAllExcels").EnumerateFiles("*.xlsx",SearchOption.AllDirectories);
             // var listAllExcelFilePaths = new DirectoryInfo("F:\\temp\\test_error_files").EnumerateFiles("*.xlsx");
             Dictionary<string, Dictionary<string, string>> dic = new();
             var sw = new Stopwatch();

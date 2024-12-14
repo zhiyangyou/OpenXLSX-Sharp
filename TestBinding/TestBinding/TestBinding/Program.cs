@@ -30,6 +30,7 @@ class Program
 
     static void Test2()
     {
+        ImportI18NTexts.TestReadAllI18N();
         int forCount = 10;
         var sw = new Stopwatch();
         sw.Start();
