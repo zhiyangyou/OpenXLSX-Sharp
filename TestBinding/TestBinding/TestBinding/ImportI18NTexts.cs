@@ -99,7 +99,7 @@ namespace M11.Editor
                 var costSingle = swSingle.ElapsedMilliseconds;
                 if (costSingle >= 10)
                 {
-                    Console.WriteLine($"222打开结束:<<<<<  {path} costTime {costSingle}ms totalRowCount :{totalRowCount}");
+                    // Console.WriteLine($"222打开结束:<<<<<  {path} costTime {costSingle}ms totalRowCount :{totalRowCount}");
                 }
             }
             int total = 0;
@@ -107,7 +107,7 @@ namespace M11.Editor
             {
                 total += kv.Value.Count;
             }
-            Console.WriteLine($"dic{dic.Count} 搜集数量：{total} cost {sw.ElapsedMilliseconds}ms");
+            Console.WriteLine($"i18n字符串 搜集数量：{total} excel文件数量{listAllExcelFilePaths.Count()} cost {sw.ElapsedMilliseconds}ms");
         }
     }
 }

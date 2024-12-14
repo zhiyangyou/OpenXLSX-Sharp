@@ -30,7 +30,14 @@ class Program
 
     static void Test2()
     {
-        ImportI18NTexts.TestReadAllI18N();
+        int forCount = 10;
+        var sw = new Stopwatch();
+        sw.Start();
+        for (int i = 0; i < forCount; i++)
+        {
+            ImportI18NTexts.TestReadAllI18N();
+        }
+        Console.WriteLine($"平均耗时{sw.ElapsedMilliseconds / forCount}ms");
     }
 
     static void TestExcel2(List<(string, string)> listExcels)
