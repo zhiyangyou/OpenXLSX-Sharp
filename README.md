@@ -53,6 +53,9 @@ C# binding library for [OpenXLSX](https://github.com/troldal/OpenXLSX)
 
 - 缓存友好
 - 规避多次内存寻址
+- 自定义的zip解压器：libdeflate + mio（mmap）
+- 内存行为优化（使用mimalloc，内存特性得到巨幅提升）
+- 规避无意义的中间对象生成
 
 
 
