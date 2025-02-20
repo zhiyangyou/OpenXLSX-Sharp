@@ -9,7 +9,8 @@ namespace M11.Editor
         public static void TestReadAllI18N()
         {
             // Debug.LogError("测试读取所有i18n列");
-            var listAllExcelFilePaths = new DirectoryInfo("F:\\temp\\testAllExcels").EnumerateFiles("*.xlsx",SearchOption.AllDirectories);
+            var listAllExcelFilePaths = new DirectoryInfo("D:\\temp\\testAllExcels").EnumerateFiles("*.xlsx",SearchOption.AllDirectories);
+            // var listAllExcelFilePaths = new DirectoryInfo("D:\\temp\\testAllExcels-with-big-excel").EnumerateFiles("*.xlsx",SearchOption.AllDirectories);
             // var listAllExcelFilePaths = new DirectoryInfo("F:\\temp\\test_error_files").EnumerateFiles("*.xlsx");
             Dictionary<string, Dictionary<string, string>> dic = new();
             var sw = new Stopwatch();
@@ -97,9 +98,9 @@ namespace M11.Editor
                     });
                 }
                 var costSingle = swSingle.ElapsedMilliseconds;
-                if (costSingle >= 10)
+                if (costSingle >= 30)
                 {
-                    // Console.WriteLine($"222打开结束:<<<<<  {path} costTime {costSingle}ms totalRowCount :{totalRowCount}");
+                    Console.WriteLine($"222打开结束:<<<<<  {path} costTime {costSingle}ms totalRowCount :{totalRowCount}");
                 }
             }
             int total = 0;
