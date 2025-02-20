@@ -9,7 +9,7 @@ C# binding library for [OpenXLSX](https://github.com/troldal/OpenXLSX)
 
 ## 效果
 
-- [用例1](https://github.com/zhiyangyou/OpenXLSX-Sharp/blob/main/TestInUnity/ExcelReaderTest/Assets/Editor/Plugin/TestExcelPerf.cs#L223)： 将excel中的数据打印成C#的string，效率提升了3_12倍左右 （表越大，性能差越多）
+- [用例1](https://github.com/zhiyangyou/OpenXLSX-Sharp/blob/main/TestInUnity/ExcelReaderTest/Assets/Editor/Plugin/TestExcelPerf.cs#L223)： 将excel中的数据打印成C#的string，效率提升了13~90倍左右 （表越大，性能差越多）
 - 2024年12月份版本，再次优化，原生性能再提升约3倍多
 
 <img src="docImages\perf.png" style="zoom: 50%;" />
